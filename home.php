@@ -2,8 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <title>Smart Pet´s</title>
+    <link rel="icon" href="images/logo.png">
+
   </head>
   <body>
 
@@ -30,8 +33,8 @@
       <h1>Bienvenido a Smart Pet´s</h1>
     </section>
 
-    <nav>
-      <ul class="sideBar">
+    <nav class="sideBar">
+      <ul >
         <li><a href="#">Perros</a></li>
         <li><a href="#">Gatos</a></li>
         <li><a href="#">Aves</a></li>

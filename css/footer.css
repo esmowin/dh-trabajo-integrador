@@ -1,10 +1,13 @@
 
 footer{
   background-color: #376896;
-  display: inline-block;
-  max-width: 1200px;
-  position:absolute;
-   bottom:0px;
-   left:0px;
+  clear: both;
+
+
+
+}
+
+footer h2{
+display: inline;
 
 }
