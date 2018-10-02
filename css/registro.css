@@ -2,126 +2,124 @@ body {
   background-color: #EAE8E8;
 }
 
-.navbar {
+.registro-navbar {
   width: 100%;
-  height: 100px;
+  height: 80px;
   background-color: #F7EF80;
-  margin-bottom: 40px;
-}
-
-.navbar {
+  margin-bottom: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.logo {
+.registro-logo {
   width: 50px;
 }
 
-.navbar p {
+.registro-navbar p {
   margin: 0;
   font-size: 25px;
 }
 
-.titulos {
-  margin: 30px auto 10px;
+.registro-titulos {
+  margin: 25px auto 10px;
   border-radius: 5px;
   border: solid 2px #383737;
   width: 80%;
-  max-width: 500px;
+  max-width: 450px;
   padding: 15px;
   background-color: #376896;
   text-align: center;
 }
 
-h1 {
-  margin: 0 0 20px;
+.registro-titulos h1 {
+  margin: 0 0 15px;
   color: white;
+  font-size: 1.5em;
 }
 
-h2 {
-  margin: 0 0 10px;
+.registro-titulos h2 {
+  margin: 0 0 8px;
   color: white;
-} 
+  font-size: 1.2em;
+}
 
-form {
-  margin: auto;
+.registro-formulario {
+  margin: 0 auto 30px;
   border-radius: 5px;
   border: solid 2px #383737;
   width: 80%;
-  max-width: 500px;
-  padding: 25px 15px;
+  max-width: 450px;
+  padding: 20px 12px;
   background-color: white;
-  font-size: 20px;
+  font-size: 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.primeros-campos {
+.registro-container-campos {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.nombre-y-campo {
+.registro-nombre-y-campo {
   width: 100%;
   margin-bottom: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: baseline;
 }
 
-.nombre {
+.registro-nombre {
   width: 40%;
   margin: 5px;
 }
 
-.campo {
+.registro-campo {
   width: 50%;
   margin: 5px;
 }
 
-.campo-avatar {
+.registro-campo input {
+  padding: 5px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
 }
 
-button {
-  margin-top: 25px;
+.registro-campo input.seleccionar-archivo {
+  padding: 0;
+  margin: 0;
+}
+
+.registro-leyenda-archivo {
+  font-size: 10px;
+  margin: 0;
+}
+
+.registro-dropdown {
+  padding: 5px;
+}
+
+.registro-error {
+  font-size: 10px;
+  color: red;
+  margin: 0;
+}
+
+.registro-button {
+  margin-top: 15px;
   border-radius: 5px;
   border: solid 1px black;
-  padding: 10px 25px;
+  padding: 8px 20px;
   background-color: #376896;
   color: white;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 }
 
-button:hover {
+.registro-button:hover {
   background-color: #2E72B2;
-}
-
-.productos {
-  margin: 60px auto;
-  width: 100%;
-  max-width: 1000px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.prod {
-  width: 200px;
-  height: 200px;
-  margin: 15px;
-  background-color: white;
-  border-radius: 5px;
-  border: solid 2px #383737;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
