@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Smart Pet´s</title>
+    <title>SmartPet - Home</title>
     <link rel="icon" href="images/logo.png">
 
   </head>
@@ -12,8 +12,8 @@
 
     <header>
 
-      <img class="imagenBar" src="images/logo.png" alt="">
-      <h2 class="textoLogo" >Smart Pet´s</h2>
+      <img class="imagenBar" src="images/logo-blanco.png" alt="">
+      <h2 class="textoLogo" >SmartPet</h2>
 
       <nav class="usuario">
         <a href="registro.php">Registrar</a>
@@ -34,7 +34,7 @@
 
 
     <section class="title">
-      <h1>Smart Pet´s</h1>
+      <h1>SmartPet</h1>
     </section>
 
     <nav class="sideBar">
