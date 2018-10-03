@@ -1,6 +1,6 @@
 
 footer{
-  background-color: #376896;
+  background-color: #FFFFFF;  /* Azul: #2C3E50  Primer Azul: #376896*/
   clear: both;
 
 
@@ -8,6 +8,7 @@ footer{
 }
 
 footer h2{
-display: inline;
+display: inline-inline-block;
+height: 200px;
 
 }

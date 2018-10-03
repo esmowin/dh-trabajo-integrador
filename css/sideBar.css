@@ -4,7 +4,8 @@
   float: left;
   max-width: 200px;
   height: 400px;
-  background-color: #F7EF80;
+  background-color:  #fff159;  /* Verde: #18BC9C Amarillo: #F7EF80 AmarilloML:#fff159 Naranja: #f60  Gris: #EAE8E8 */
+  margin-bottom: 20px;
   padding: 50px;
   margin-top: 100px;
 }

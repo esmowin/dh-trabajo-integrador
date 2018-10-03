@@ -11,6 +11,10 @@
   <body>
 
     <header>
+
+      <img class="imagenBar" src="images/logo.png" alt="">
+      <h2 class="textoLogo" >Smart Pet´s</h2>
+
       <nav class="usuario">
         <a href="registro.php">Registrar</a>
         <a href="login.php">Login</a>
@@ -30,7 +34,7 @@
 
 
     <section class="title">
-      <h1>Bienvenido a Smart Pet´s</h1>
+      <h1>Smart Pet´s</h1>
     </section>
 
     <nav class="sideBar">
