@@ -12,15 +12,16 @@
 
     <header>
 
-      <img class="imagenBar" src="images/logo-blanco.png" alt="">
-      <h2 class="textoLogo" >SmartPet</h2>
-
       <nav class="usuario">
         <a href="registro.php">Registrar</a>
         <a href="login.php">Login</a>
       </nav>
 
-      <nav >
+      <img class="logo" src="images/logo-blanco-largo.png" >
+
+      <img class="menu_hamburger" src="images/menu_green.png" >
+      <nav class="navegacion">
+
         <ul class="barra_nav">
           <li><a href="#">Home</a></li>
           <li><a href="#">Mascotas</a></li>
@@ -28,6 +29,7 @@
           <li><a href="#">Contacto</a></li>
           <li><a href="#">ONG</a></li>
         </ul>
+
       </nav>
 
     </header>

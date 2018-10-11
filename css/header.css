@@ -4,18 +4,19 @@ header {
   left: 0px;
   background-color: #2C3E50;   /* Verde: #18BC9C Amarillo: #F7EF80 AmarilloML:#fff159 Naranja: #f60  Gris: #EAE8E8 */
   width: 100vw;
-  height: 120px;
+   height: 120px;
 
 
 }
 
-.barra_nav {
 
+
+.barra_nav {
+  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content:center;
-
-  }
+}
 
 
 .barra_nav li{
@@ -26,23 +27,7 @@ header {
   padding-right:6vw;
   padding-top: 10px;
   padding-bottom: 10px;
-
-}
-
-.imagenBar{
-  position: absolute;
-  top:5px;
-  left:10px;
-  width: 100px;
-}
-
-.textoLogo{
-  position: absolute;
-  top:15px;
-  left:100px;
-  font-size: 30px;
-  color: white;
-
+  font-size: 20px;
 }
 
 .barra_nav a{
@@ -53,14 +38,31 @@ header {
 .barra_nav li:hover{
 
   color: "#FFFFFF";
-  font-size: 20px;
+  /* font-size: 20px; */
   background-color: rgba(238,238,238,0.5);
 }
 
+
+.logo{
+  position: absolute;
+  top:5px;
+  left:10px;
+  width: 200px;
+
+}
+
+.menu_hamburger{
+  display: none;
+  float: right;
+  width: 50px;
+
+}
+
+
 .usuario{
-  display:flex;
-  justify-content: flex-end;
-  padding: 1vw 3vw 1vw;
+  float: right;
+  display: block;
+  padding: 1vw 3vw 0vw;
 }
 
 .usuario a{
@@ -70,7 +72,7 @@ header {
 
 .title{
 
-  margin: 150px auto 10px;
+  margin: 250px auto 10px;
   width: 60%;
   padding: 15px;
   color: #FFFFFF;
