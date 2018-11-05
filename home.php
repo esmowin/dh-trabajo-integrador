@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>SmartPet - Home</title>
     <link rel="icon" href="images/logo.png">
-    <!-- Comentario de prueba -->
   </head>
   <body>
 
