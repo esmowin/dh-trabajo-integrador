@@ -39,10 +39,12 @@
               <input type="password" name="login-password" value="">
             </div>
           </div>
+          <input type="checkbox" name="" value="">Recordarme
+
 
         </div>
 
-        <button class="registro-button" type="submit" name="button">Enviar</button>
+        <button class="registro-button" type="submit" name="button">Ingresar</button>
 
       </form>
 
