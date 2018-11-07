@@ -14,14 +14,39 @@ class Usuario
 
   function __construct($idUsuariox, $fullnamex, $nicknamex, $countryx, $emailx, $passwordx, $avatarx, $activox)
   {
-    $this->$idUsuario=$idUsuario;
-    $this->$fullname=$fullname;
-    $this->$nickname=$nickname;
-    $this->$country=$country;
-    $this->$email=$email;
-    $this->$password=$password;
-    $this->$avatar=$avatar;
-    $this->$activo=$activo;
-
+    $this->$idUsuario=$idUsuariox;
+    $this->$fullname=$fullnamex;
+    $this->$nickname=$nicknamex;
+    $this->$country=$countryx;
+    $this->$email=$emailx;
+    $this->$password=$passwordx;
+    $this->$avatar=$avatarx;
+    $this->$activo=$activox;
   }
+
+  public function getNombre()
+  {
+    return $this->$fullname;
+  }
+  public function getNickname()
+  {
+    return $this->$nickname;
+  }
+  public function getCountry()
+  {
+    return $this->$country;
+  }
+  public function getEmail()
+  {
+    return $this->$email;
+  }
+  public function getPassword()
+  {
+    return $this->$password;
+  }
+  public function getAvatar()
+  {
+    return $this->$avatar;
+  }
+
 }
