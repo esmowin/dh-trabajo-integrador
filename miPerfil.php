@@ -17,29 +17,34 @@ correo electronico -->
   </head>
 
   <body class="registro-body">
-    <div>
-      <div class="registro-navbar">
-      <img class="registro-logo" src="images/logo-blanco.png" alt="Logo SmartPet">
-      <p>Navbar SmartPet</p>
+
+    <?php require_once 'header.php'; ?>
+
+    <div class="container-principal">
+
+      <div class="perfilmain">
+        <div class="perfilusuario">
+          <img class="perfilimg" src="images/imgperfil.png" alt="Perfil">
+        </div>
+        <div class="perfilusuario">
+          <h2 class ="perfilh2">Usuario</h2>
+        </div>
+        <div>
+          <div>
+            Nombre completo: John Doe
+          </div>
+          <div>
+            País de nacimiento: Neverland
+          </div>
+          <div>
+            Correo electronico: john@doe.com
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="perfilmain">
-      <div class="perfilusuario">
-        <img class="perfilimg" src="images/imgperfil.png" alt="Perfil">
-      </div>
-      <div class="perfilusuario">
-        <h2 class ="perfilh2">Usuario</h2>
-      </div>
-      <div>
-        <div>
-          Nombre completo: John Doe
-        </div>
-        <div>
-          País de nacimiento: Neverland
-        </div>
-        <div>
-          Correo electronico: john@doe.com
-        </div>
-      </div>
-    </div>
+
+    <script src="js/header.js"></script>
+
   </body>
 </html>

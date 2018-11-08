@@ -10,10 +10,11 @@
   </head>
 
   <body class="registro-body">
-      <div class="registro-navbar">
-        <img class="registro-logo" src="images/logo-blanco.png" alt="Logo SmartPet">
-        <p>Navbar SmartPet</p>
-      </div>
+
+
+    <?php require_once 'header.php'; ?>
+
+    <div class="container-principal">
 
       <div class="registro-titulos">
 
@@ -47,6 +48,10 @@
         <button class="registro-button" type="submit" name="button">Ingresar</button>
 
       </form>
+
+    </div>
+
+    <script src="js/header.js"></script>
 
   </body>
 </html>

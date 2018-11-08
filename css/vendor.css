@@ -12,3 +12,23 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+.container-principal {
+  padding-top: 120px;
+}
+
+@media (max-width: 991px) {
+
+  .container {
+    padding-top: 73px;
+  }
+
+}
+
+@media (max-width: 575px) {
+
+  .container {
+    padding-top: 68px;
+  }
+
+}
