@@ -1,17 +1,18 @@
 <?php
+require_once 'DB.php';
 
-  class auth
+  class Auth
   {
 
-    function __construct($username, $password)
-    {
-      
-    }
 
     function login($username, $password){
 
+      if () {
+        // el usuario existe
+        return true;
+      }
 
-      return $user;
+      return false;//el usuario no existe o la contrasena es incorrecta
 
     }
 

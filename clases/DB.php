@@ -18,74 +18,94 @@ class BD
     }
   }
 
-    public function guardarUsuario(Usuario $usuario){
+  public function guardarUsuario(Usuario $usuario){
 
-      $stmt = $this->conn->prepare("INSERT INTO usuarios(fullname, nickname, country, email, password, avatar, activo) VALUES (:fullname, :nickname, :country, :email, :password, :avatar, 1)");
+    $stmt = $this->conn->prepare("INSERT INTO usuarios(fullname, nickname, country, email, password, avatar, activo) VALUES (:fullname, :nickname, :country, :email, :password, :avatar, 1)");
 
-      $stmt->bindValue(":fullname",$usuario->getNombre());
-      $stmt->bindValue(":nickname",$usuario->getNickname());
-      $stmt->bindValue(":country",$usuario->getCountry());
-      $stmt->bindValue(":email",$usuario->getEmail());
-      $stmt->bindValue(":password",$usuario->getPassword());
-      $stmt->bindValue(":avatar",$usuario->getAvatar());
+    $stmt->bindValue(":fullname",$usuario->getNombre());
+    $stmt->bindValue(":nickname",$usuario->getNickname());
+    $stmt->bindValue(":country",$usuario->getCountry());
+    $stmt->bindValue(":email",$usuario->getEmail());
+    $stmt->bindValue(":password",$usuario->getPassword());
+    $stmt->bindValue(":avatar",$usuario->getAvatar());
 
-      $stmt->execute();
-      $idUsuario = $this->conn->lastInsertId();
-      $usuario->setId($idUsuario);
+    $stmt->execute();
+    $idUsuario = $this->conn->lastInsertId();
+    $usuario->setId($idUsuario);
 
-      return $usuario;
+    return $usuario;
+  }
+
+  public function traerTodo(){
+    $stmt = $this->conn->prepare("SELECT * FROM usuarios");
+
+    $stmt->execute();
+
+    $resultados = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+    foreach ($resultados as $cadaUsuario) {
+      $usuarios[] = new Usuario(
+        $cadaUsuario->idUsuario,
+        $cadaUsuario->fullname,
+        $cadaUsuario->nickname,
+        $cadaUsuario->country,
+        $cadaUsuario->email,
+        $cadaUsuario->password,
+        $cadaUsuario->avatar)
+        $cadaUsuario->activo);
     }
+    return $usuarios;
+  }
 
-    public function traerTodo(){
-      $stmt = $this->conn->prepare("SELECT * FROM usuarios");
+  public function traerPorEmail($email) {
+    $stmt = $this->conn->prepare("SELECT * FROM usuarios WHERE email = :email" );
 
-      $stmt->execute();
+    $stmt->bindValue(":email",$email);
 
-      $resultados = $stmt->fetchAll(PDO::FETCH_OBJ);
+    $stmt-> execute();
 
-      foreach ($resultados as $cadaUsuario) {
-        $usuarios[] = new Usuario(
-          $cadaUsuario->idUsuario,
-          $cadaUsuario->fullname,
-          $cadaUsuario->nickname,
-          $cadaUsuario->country,
-          $cadaUsuario->email,
-          $cadaUsuario->password,
-          $cadaUsuario->avatar)
-          $cadaUsuario->activo);
-      }
-      return $usuarios;
-    }
+    $resultados = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    public function traerPorEmail($email) {
-      $stmt = $this->conn->prepare("SELECT * FROM usuarios WHERE email = :email" );
+    if ($resultados){
+      return new Usuario(
+        $resultados['idUsuario'],
+        $resultados['fullname'],
+        $resultados['nickname'],
+        $resultados['country'],
+        $resultados['email'],
+        $resultados['password'],
+        $resultados['avatar'],
+        $resultados['activo']);
 
-      $stmt->bindValue(":email",$email);
-
-      $stmt-> execute();
-
-      $resultados = $stmt->fetch(PDO::FETCH_ASSOC);
-
-      if ($resultados){
-        return new Usuario(
-          $resultados['idUsuario'],
-          $resultados['fullname'],
-          $resultados['nickname'],
-          $resultados['country'],
-          $resultados['email'],
-          $resultados['password'],
-          $resultados['avatar'],
-          $resultados['activo']);
-
-      }else{
-        return null;
-      }
+    }else{
+      return null;
     }
   }
 
+  public function traerUsuario($user, $pass)
+  {
+    $stmt = $this->conn->prepare("SELECT * FROM usuarios WHERE user = :user AND password = :pass" );
 
+    $stmt->bindValue(":email", $email, PDO::PARAM_STR);
+    $stmt->bindValue(":pass", $pass, PDO::PARAM_STR);
 
+    $stmt-> execute();
 
+    $resultados = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($resultados){
+      return new Usuario(
+        $resultados['idUsuario'],
+        $resultados['fullname'],
+        $resultados['nickname'],
+        $resultados['country'],
+        $resultados['email'],
+        $resultados['password'],
+        $resultados['avatar'],
+        $resultados['activo']);
 
-
+    }else{
+      return false;
+    }
+  }
+}
  ?>
