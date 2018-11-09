@@ -11,8 +11,31 @@
 
   <body class="registro-body">
 
+    <?php
 
-    <?php require_once 'header.php'; ?>
+    require_once 'clases/Validator.php';
+
+    $errorCorreo = "";
+    $errorPassword="";
+    $correo="";
+
+
+    if ($_POST) {
+
+      var_dump($_POST);
+      $correo = trim($_POST["login-correo"]);
+      $password=trim($_POST["login-password"]);
+
+      $validador = new Validator();
+      $errorCorreo = $validador->validarMail($correo);
+      $errorPassword = $validador->validarPass($password);
+
+    }
+
+    ?>
+
+
+    <?php  require_once 'header.php'; ?>
 
     <div class="container-principal">
 
@@ -30,14 +53,24 @@
           <div class="registro-nombre-y-campo">
             <label for="login-correo" class="registro-nombre">Correo electrónico:</label>
             <div class="registro-campo">
-              <input type="text" name="login-correo" value="">
+              <input type="text" name="login-correo" <?php if(isset($errorCorreo["errorMail"])){echo 'style="border: solid 2px red"';} ?> value="<?php echo $correo; ?>">
+              <?php
+                if (isset($errorCorreo["errorMail"])) {
+                  echo '<br><span class="registro-error">'.$errorCorreo["errorMail"].'</span>';
+                }
+              ?>
             </div>
           </div>
 
           <div class="registro-nombre-y-campo">
             <label for="login-password" class="registro-nombre">Contraseña:</label>
             <div class="registro-campo">
-              <input type="password" name="login-password" value="">
+              <input type="password" name="login-password" value="" <?php if(isset($errorPassword["errorPass"])){echo 'style="border: solid 2px red"';} ?> >
+              <?php
+                if (isset($errorPassword["errorPass"])) {
+                  echo '<br><span class="registro-error">'.$errorPassword["errorPass"].'</span>';
+                }
+              ?>
             </div>
           </div>
           <input type="checkbox" name="" value="">Recordarme

@@ -116,6 +116,43 @@ class Validator{
 
     }
 
+    public function validarNick(String $nickname){
 
+      // Valido el "Nombre de usuario"
+
+      // Hago un tratamiento para NO permitir espacios ni símbolos como *, $, &, /, etc., pero SÍ permitir las letras utilizadas tanto en el idioma español como en el portugués -esto incluye las letras "especiales" de estos dos idiomas, es decir, la Ñ y la Ç-)
+      $error =[];
+      if (empty($nickname)) {
+        $error ["errorNik"] = 'Debes completar este campo';
+        } else if ((strlen($nickname) < 3) || (strlen($nickname) > 30)) {
+        $error ["errorNik"] = 'El nombre de usuario debe tener un mínimo de 3 y un máximo de 30 caracteres';
+        } else if (!ctype_alnum(str_replace(['á', 'ã', 'â', 'à', 'é', 'ê', 'í', 'ó', 'õ', 'ô', 'ú', 'ñ', 'ç'], '',$nickname))) {
+        $error ["errorNik"] = 'Se ingresaron caracteres inválidos. Este campo acepta solo letras y números (sin espacios)';
+        }
+        return $error;
+    }
+
+    public function validarMail(String $mail){
+      $error= [];
+      if (empty($mail)) {
+        $error ["errorMail"] = 'Debes completar este campo';
+        } else if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+        $error ["errorMail"] = 'El formato del correo es inválido';
+        }
+        return $error;
+    }
+
+    public function validarPass(String $pass){
+
+      // Valido la "Contraseña"
+      $error=[];
+      if (empty($pass)) {
+        $error ["errorPass"] = 'Debes completar este campo';
+        return $error;
+      } else if ((strlen($pass) < 8) || (strlen($pass) > 20)) {
+        $error ["errorPass"] = 'La contraseña debe tener un mínimo de 8 y un máximo de 20 caracteres';
+      }
+      return $error;
+    }
 
   }
