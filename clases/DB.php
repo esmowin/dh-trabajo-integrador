@@ -5,7 +5,7 @@ class BD
 
   private $dsn = "mysql:host=localhost;dbname=smartpet;";
   private $usuario = "root";
-  private $pass = "root";
+  private $pass = "";
   private $opt=[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION];
   private $conn;
 
@@ -20,7 +20,7 @@ class BD
 
   public function guardarUsuario(Usuario $usuario){
 
-    $stmt = $this->conn->prepare("INSERT INTO usuarios(fullname, nickname, country, email, password, avatar, activo) VALUES (:fullname, :nickname, :country, :email, :password, :avatar, 1)");
+    $stmt = $this->conn->prepare("INSERT INTO usuarios (fullname, nickname, country, email, password, avatar, activo) VALUES (:fullname, :nickname, :country, :email, :password, :avatar, 1)");
 
     $stmt->bindValue(":fullname",$usuario->getNombre());
     $stmt->bindValue(":nickname",$usuario->getNickname());
