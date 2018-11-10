@@ -1,6 +1,5 @@
 <?php
 
-
 class Usuario
 {
   protected $idUsuario;
@@ -12,7 +11,7 @@ class Usuario
   protected $avatar;
   protected $activo;
 
-  function __construct($idUsuariox, $fullnamex, $nicknamex, $countryx, $emailx, $passwordx, $avatarx, $activox)
+  public function __construct($idUsuariox, $fullnamex, $nicknamex, $countryx, $emailx, $passwordx, $avatarx, $activox)
   {
     $this->$idUsuario=$idUsuariox;
     $this->$fullname=$fullnamex;
