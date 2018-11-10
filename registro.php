@@ -11,6 +11,7 @@
 
   <?php
 
+    require_once("clases/Usuario.php");
     // Defino las variables que voy a usar en las validaciones
 
     $errores = [];

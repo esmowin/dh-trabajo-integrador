@@ -1,11 +1,12 @@
 <?php
 
-class BD
-{
+require_once("Usuario.php");
 
-  private $dsn = "mysql:host=localhost;dbname=smartpet;";
+class DB
+{
+  private $dsn = "mysql:host=localhost; dbname=smartpet; charset=utf8mb4; port=3306";
   private $usuario = "root";
-  private $pass = "";
+  private $pass = "root";
   private $opt=[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION];
   private $conn;
 
@@ -20,7 +21,8 @@ class BD
 
   public function guardarUsuario(Usuario $usuario){
 
-    $stmt = $this->conn->prepare("INSERT INTO usuarios (fullname, nickname, country, email, password, avatar, activo) VALUES (:fullname, :nickname, :country, :email, :password, :avatar, 1)");
+    //$stmt = $this->conn->prepare("INSERT INTO usuarios (fullname, nickname, country, email, password, avatar, activo) VALUES (:fullname, :nickname, :country, :email, :password, :avatar, 1)");
+    $stmt = $this->conn->prepare("Insert into usuarios values(default, :fullname, :nickname, :country, :email, :password, :avatar, 1)");
 
     $stmt->bindValue(":fullname",$usuario->getNombre());
     $stmt->bindValue(":nickname",$usuario->getNickname());
@@ -30,8 +32,10 @@ class BD
     $stmt->bindValue(":avatar",$usuario->getAvatar());
 
     $stmt->execute();
+
     $idUsuario = $this->conn->lastInsertId();
     $usuario->setId($idUsuario);
+
 
     return $usuario;
   }
@@ -51,7 +55,7 @@ class BD
         $cadaUsuario->country,
         $cadaUsuario->email,
         $cadaUsuario->password,
-        $cadaUsuario->avatar)
+        $cadaUsuario->avatar,
         $cadaUsuario->activo);
     }
     return $usuarios;

@@ -1,5 +1,7 @@
 <?php
 
+require_once("DB.php");
+
 class Validator{
 
     private $errores = [];
