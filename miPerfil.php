@@ -1,9 +1,8 @@
+<?php
 
-<!-- imagen de perfil
-nombre
-usuario
-pais de nacimiento
-correo electronico -->
+  require_once 'autoload.php';
+
+?>
 
 <!DOCTYPE html>
 <html lang="es" dir="ltr">

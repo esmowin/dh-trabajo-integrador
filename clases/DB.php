@@ -1,7 +1,5 @@
 <?php
 
-require_once 'clases/Usuario.php';
-
 class DB
 {
   private $dsn = "mysql:host=localhost; dbname=smartpet; charset=utf8mb4; port=3306";
@@ -112,4 +110,3 @@ class DB
     }
   }
 }
- ?>

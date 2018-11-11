@@ -13,7 +13,7 @@
 
     <?php
 
-    require_once 'clases/Validator.php';
+    require_once 'autoload.php';
 
     $errorCorreo = "";
     $errorPassword="";

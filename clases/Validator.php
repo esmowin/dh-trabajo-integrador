@@ -1,7 +1,5 @@
 <?php
 
-require_once 'clases/DB.php';
-
 class Validator{
 
     private $errores = [];

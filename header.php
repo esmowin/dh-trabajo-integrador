@@ -1,5 +1,7 @@
 <?php
 
+  require_once 'autoload.php';
+
   $usuarioLogueado = false;
   $avatarUsuario = "avatars/avatar-example.png";
   $nombreUsuario = "UserFirstName";

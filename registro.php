@@ -11,7 +11,8 @@
 
   <?php
 
-    require_once 'clases/Usuario.php';
+    require_once 'autoload.php';
+
     // Defino las variables que voy a usar en las validaciones
 
     $errores = [];
@@ -26,14 +27,11 @@
 
     if ($_POST) {
 
-      require_once 'clases/Validator.php';
-
       $validador = new Validator();
 
       $errores=$validador->validarPost($_POST);
 
-      // // "Limpio" los datos recibidos por POST
-      //
+      // "Limpio" los datos recibidos por POST
 
       $fullname = trim($_POST['fullname']);
       $nickname = trim($_POST['nickname']);
@@ -43,7 +41,9 @@
       $password2 = trim($_POST['password2']);
 
        if (empty($errores)){
-          // Una vez validado todo y subido exitosamente el archivo, vuelvo al Home (más adelante hay que hacer una pantalla que le dé la bienvenida al nuevo usuario (usando GET)
+
+        // Una vez validado todo y subido exitosamente el archivo, vuelvo al Home (más adelante hay que hacer una pantalla que le dé la bienvenida al nuevo usuario (usando GET)
+
         header('Location:home.php');
       }
 

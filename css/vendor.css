@@ -15,6 +15,9 @@ ul {
 
 .container-principal {
   padding-top: 120px;
+  width: 100%;
+  max-width: 1350px;
+  margin: auto;
 }
 
 @media (max-width: 991px) {
