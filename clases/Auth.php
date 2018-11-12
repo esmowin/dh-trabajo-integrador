@@ -3,17 +3,6 @@
   class Auth
   {
 
-  function login($username, $password){
-    if () {
-      // el usuario existe
-      return true;
-    }
-    return false;//el usuario no existe o la contrasena es incorrecta
-  }
-    function recuerdame(){
-      $_COOKIE
-      $_SESSION
-
     public function __construct()// -crear constructor con session_start() y chequear que si esta la cookie de logueado, usarla como session
     {
       if (isset($_COOKIE["email"])) {
@@ -34,10 +23,10 @@
 
 
     }
-    public function usuarioLogueado($db=new BD)// que recibe una db. Preguntar si estaLogueado y devolver el objeto usuario con el traerPorEmail del db usando el email de sesion, sino devolver NULL
+    public function usuarioLogueado($conn)// que recibe una db. Preguntar si estaLogueado y devolver el objeto usuario con el traerPorEmail del db usando el email de sesion, sino devolver NULL
     {
       if ($this->estaLogueado()) {
-        return $db->traerPorEmail($_SESSION["email"]);
+        return $conn->traerPorEmail($_SESSION["email"]);
       }else {
         return NULL;
       }
@@ -49,7 +38,7 @@
     }
     public function recordarme($email)// que recibe un email y setea la cookie
     {
-      setcookie("email", $email);
+      setcookie("email", $email, time()+(1000*60*60*24*365));
     }
 
   }
