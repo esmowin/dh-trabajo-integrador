@@ -43,6 +43,8 @@
 
     </div>
 
+    <?php require_once 'footer.php'; ?>
+
     <script src="js/header.js"></script>
 
   </body>

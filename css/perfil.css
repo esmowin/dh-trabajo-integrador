@@ -4,7 +4,7 @@
 }
 
 .perfilmain {
-  margin: 0 auto;
+  margin: 20px auto;
   width: 280px;
   display: flex;
   flex-direction: column;

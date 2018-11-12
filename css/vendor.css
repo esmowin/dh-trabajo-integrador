@@ -15,6 +15,7 @@ ul {
 
 .container-principal {
   padding-top: 120px;
+  padding-bottom: 40px;
   width: 100%;
   max-width: 1350px;
   margin: auto;
@@ -22,7 +23,7 @@ ul {
 
 @media (max-width: 991px) {
 
-  .container {
+  .container-principal {
     padding-top: 73px;
   }
 
@@ -30,7 +31,7 @@ ul {
 
 @media (max-width: 575px) {
 
-  .container {
+  .container-principal {
     padding-top: 68px;
   }
 
