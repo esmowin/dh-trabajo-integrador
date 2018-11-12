@@ -41,8 +41,18 @@
       $password2 = trim($_POST['password2']);
 
        if (empty($errores)){
+         ////////////////////////////////Guardo la image del Avatar//////////////
+         $archivo = uniqid();
+         $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+         $desde = $_FILES["avatar"]["tmp_name"];
+         $hasta = "avatars/".$archivo.".".$ext;
+         move_uploaded_file($desde, $hasta);
+         ////////////////////////////////Guardo la image del Avatar//////////////
 
         // Una vez validado todo y subido exitosamente el archivo, vuelvo al Home (más adelante hay que hacer una pantalla que le dé la bienvenida al nuevo usuario (usando GET)
+        $nuevoUsuario = new Usuario(null, $fullname, $nickname, $country, $email, $password1,$hasta,1);
+        $conn_BD = new DB;
+        $conn_BD->guardarUsuario($nuevoUsuario);
 
         header('Location:home.php');
       }

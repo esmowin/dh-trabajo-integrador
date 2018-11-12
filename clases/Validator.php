@@ -62,6 +62,11 @@ class Validator{
         $this->errores ['email'] = 'Debes completar este campo';
       } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
         $this->errores ['email'] = 'El formato del correo es inválido';
+      }else{
+        $conn_BD= new DB ;
+        if ($conn_BD->traerPorEmail($this->email)) {
+          $this->errores ['email'] = 'El Email que ha elegido ya existe';
+        }
       }
 
       // Valido la "Contraseña"
@@ -92,17 +97,16 @@ class Validator{
 
         } else if ($_FILES["avatar"]["error"] == UPLOAD_ERR_OK) {
 
-          $archivo = uniqid();
+
           $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
-          $desde = $_FILES["avatar"]["tmp_name"];
+
 
           if ($ext != "png" && $ext != "jpg" && $ext != "jpeg") {
             $this->errores ['imagen'] = "El formato del archivo es inválido";
           } else if ($_FILES["avatar"]["size"] > 2097152) {
             $this->errores ['imagen'] = "El archivo supera el tamaño máximo permitido";
           } else {
-            $hasta = "avatars/".$archivo.".".$ext;
-            move_uploaded_file($desde, $hasta);
+
 
           };
 

@@ -4,7 +4,7 @@ class DB
 {
   private $dsn = "mysql:host=localhost; dbname=smartpet; charset=utf8mb4; port=3306";
   private $usuario = "root";
-  private $pass = "root";
+  private $pass = "";
   private $opt=[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION];
   private $conn;
 
@@ -31,8 +31,8 @@ class DB
 
     $stmt->execute();
 
-    $idUsuario = $this->conn->lastInsertId();
-    $usuario->setId($idUsuario);
+  //  $idUsuario = $this->conn->lastInsertId();
+  //  $usuario->setId($idUsuario);
 
 
     return $usuario;
