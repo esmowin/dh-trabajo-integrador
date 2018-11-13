@@ -67,7 +67,7 @@ class DB
     $stmt-> execute();
 
     $resultados = $stmt->fetch(PDO::FETCH_ASSOC);
-
+  
     if ($resultados){
       return new Usuario(
         $resultados['idUsuario'],

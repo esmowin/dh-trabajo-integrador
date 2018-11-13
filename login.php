@@ -22,20 +22,38 @@
 
     if ($_POST) {
 
-      var_dump($_POST);
       $correo = trim($_POST["login-correo"]);
       $password=trim($_POST["login-password"]);
 
       $validador = new Validator();
       $errorCorreo = $validador->validarMail($correo);
       $errorPassword = $validador->validarPass($password);
+      if (empty($errorCorreo)&& empty($errorPassword)) {
+        $conn_BD = new DB;
+        $usuario=$conn_BD->traerPorEmail($correo);
+        if ($usuario!=null) {
+          $passUsuarioHash=$usuario->getPassword();
+        }else {
+          $passUsuarioHash=null;
+        }
+        if (($usuario!=null) && password_verify($password , $passUsuarioHash ) ) {
+
+          $loguear = new Auth();
+          $loguear->loguear($usuario->getEmail());
+          header('Location:home.php');        
+          ////////////////////Loguear Aca///////////////////
+
+        }else {
+          $errorPassword["errorPass"] = "Verifique Usuario y Contraseña";
+        }
+      }
 
     }
 
     ?>
 
 
-    <?php  require_once 'header.php'; ?>
+    <?php   require_once 'header.php'; ?>
 
     <div class="container-principal">
 
