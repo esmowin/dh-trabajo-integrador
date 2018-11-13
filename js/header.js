@@ -1,6 +1,8 @@
 window.onload = function() {
 
-  // Defino las funciones para esconder los menús
+
+  // Defino las funciones para mostrar y esconder los menús
+
 
   var toggleCategorias = function() {
     categoriasDesplegable.classList.toggle("hidden");
@@ -8,10 +10,10 @@ window.onload = function() {
     categoriasCruz.classList.toggle("hidden");
   }
 
-  var toggleCategoriasMobile = function() {
-    categoriasDesplegableMobile.classList.toggle("hidden");
-    categoriasFlechaIzquierdaMobile.classList.toggle("hidden");
-    categoriasCruzMobile.classList.toggle("hidden");
+  var toggleUsuario = function() {
+    usuarioDesplegable.classList.toggle("hidden");
+    usuarioFlechaAbajo.classList.toggle("hidden");
+    usuarioCruz.classList.toggle("hidden");
   }
 
   var toggleMenuHamburguer = function() {
@@ -21,15 +23,39 @@ window.onload = function() {
     if (!categoriasDesplegableMobile.classList.contains("hidden")) {
       toggleCategoriasMobile();
     }
+    if (!usuarioDesplegableMobile.classList.contains("hidden")) {
+      toggleUsuarioMobile();
+    }
   }
+
+  var toggleUsuarioMobile = function() {
+    if (!categoriasDesplegableMobile.classList.contains("hidden")) {
+      toggleCategoriasMobile();
+    }
+    usuarioDesplegableMobile.classList.toggle("hidden");
+    usuarioFlechaIzquierdaMobile.classList.toggle("hidden");
+    usuarioCruzMobile.classList.toggle("hidden");
+  }
+
+  var toggleCategoriasMobile = function() {
+    if (!usuarioDesplegableMobile.classList.contains("hidden")) {
+      toggleUsuarioMobile();
+    }
+    categoriasDesplegableMobile.classList.toggle("hidden");
+    categoriasFlechaIzquierdaMobile.classList.toggle("hidden");
+    categoriasCruzMobile.classList.toggle("hidden");
+  }
+
+
+  // Agrego los eventos para la apertura y cierre de todos los menús
 
 
   // Apertura y cierre del menú "Todas las categorías" versión DESKTOP
 
   var categoriasDisparador = document.querySelector(".todas-las-categorias");
   var categoriasDesplegable = document.querySelector(".menu-categorias");
-  var categoriasFlechaAbajo = document.querySelector(".flecha-abajo");
-  var categoriasCruz = document.querySelector(".cruz");
+  var categoriasFlechaAbajo = document.querySelector(".flecha-abajo-cat");
+  var categoriasCruz = document.querySelector(".cruz-cat");
 
   categoriasDisparador.addEventListener("click", toggleCategorias);
 
@@ -39,16 +65,20 @@ window.onload = function() {
     }
   });
 
+  // Apertura y cierre del menú del Usuario versión DESKTOP
 
-  // Apertura y cierre del menú "Todas las categorías" versión MOBILE
+  var usuarioDisparador = document.querySelector(".usuario-logueado");
+  var usuarioDesplegable = document.querySelector(".menu-usuario-logueado");
+  var usuarioFlechaAbajo = document.querySelector(".flecha-abajo-usu");
+  var usuarioCruz = document.querySelector(".cruz-usu");
 
-  var categoriasDisparadorMobile = document.querySelector(".todas-las-categorias-mobile");
-  var categoriasDesplegableMobile = document.querySelector(".menu-categorias-mobile");
-  var categoriasFlechaIzquierdaMobile = document.querySelector(".flecha-izquierda-mobile");
-  var categoriasCruzMobile = document.querySelector(".cruz-mobile");
+  usuarioDisparador.addEventListener("click", toggleUsuario);
 
-  categoriasDisparadorMobile.addEventListener("click", toggleCategoriasMobile);
-
+  document.addEventListener("click", function(event) {
+    if (!event.target.closest(".usuario-logueado") && !event.target.closest(".menu-usuario-logueado") && !usuarioDesplegable.classList.contains("hidden")) {
+      toggleUsuario();
+    }
+  });
 
   // Apertura y cierre del menú "hamburguer" del MOBILE
 
@@ -64,5 +94,23 @@ window.onload = function() {
       toggleMenuHamburguer();
     }
   });
+
+  // Apertura y cierre del menú Usuario versión MOBILE
+
+  var usuarioDisparadorMobile = document.querySelector(".usuario-logueado-mobile");
+  var usuarioDesplegableMobile = document.querySelector(".menu-usuario-logueado-mobile");
+  var usuarioFlechaIzquierdaMobile = document.querySelector(".flecha-izquierda-usu-mobile");
+  var usuarioCruzMobile = document.querySelector(".cruz-usu-mobile");
+
+  usuarioDisparadorMobile.addEventListener("click", toggleUsuarioMobile);
+
+  // Apertura y cierre del menú "Todas las categorías" versión MOBILE
+
+  var categoriasDisparadorMobile = document.querySelector(".todas-las-categorias-mobile");
+  var categoriasDesplegableMobile = document.querySelector(".menu-categorias-mobile");
+  var categoriasFlechaIzquierdaMobile = document.querySelector(".flecha-izquierda-mobile");
+  var categoriasCruzMobile = document.querySelector(".cruz-mobile");
+
+  categoriasDisparadorMobile.addEventListener("click", toggleCategoriasMobile);
 
 }

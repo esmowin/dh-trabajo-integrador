@@ -1,9 +1,6 @@
-.registro-body {
-  background-color: white;
-}
 
 .registro-titulos {
-  margin: 10px auto 5px;
+  margin: 20px auto 5px;
   border-radius: 5px;
   border: solid 1px #383737;
   width: 80%;
@@ -40,7 +37,7 @@
 }
 
 .registro-formulario {
-  margin: 0 auto 10px;
+  margin: 0 auto 20px;
   border-radius: 5px;
   border: solid 1px #383737;
   width: 80%;

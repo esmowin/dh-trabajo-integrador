@@ -119,26 +119,28 @@ align-items: center;
 .barra-categorias li a {
   text-decoration: none;
   color: white;
+  flex-grow: 1;
 }
 
 .menu-categorias {
   position: absolute;
+  top: 110px;
   background-color: #2C3E50;
-  padding-top: 11px;
   border-radius: 3px;
+  border: 1px solid white;
 }
 
 .menu-categorias li {
   padding: 8px;
 }
 
-.flecha-abajo {
+.flecha-abajo-cat {
   margin-top: 5px;
   margin-left: 5px;
   width: 19px;
 }
 
-.cruz {
+.cruz-cat {
   margin-top: 5px;
   margin-left: 8px;
   width: 14px;
@@ -170,30 +172,64 @@ align-items: center;
 }
 
 .barra-usuario {
+  position: relative;
   width: 25%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.barra-usuario li a {
-  text-decoration: none;
-  color: white;
-}
-
-.barra-usuario li.con-fondo {
-  padding: 2px 1.5vw;
+.barra-usuario li {
+  width: 180px;
+  padding-left: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   border-radius: 3px;
   transition: background-color 0.5s;
 }
 
-.barra-usuario li.con-fondo:hover {
+.barra-usuario li:hover {
   background-color: rgba(238,238,238,0.5);
+}
+
+.barra-usuario li a {
+  text-decoration: none;
+  color: white;
+  flex-grow: 1;
+}
+
+.menu-usuario-logueado {
+  width: 145px;
+  position: absolute;
+  top: 40px;
+  right: 70px;
+  background-color: #2C3E50;
+  border-radius: 3px;
+  border: 1px solid white;
+}
+
+.menu-usuario-logueado li {
+  padding: 8px;
+  width: 143px;
+}
+
+.flecha-abajo-usu {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 19px;
+}
+
+.cruz-usu {
+  margin-top: 5px;
+  margin-left: 8px;
+  width: 14px;
 }
 
 .barra-usuario li.usuario-logueado {
   margin-right: 5%;
-  padding: 0 1vw;
+  padding-left: 1vw;
   border-radius: 3px;
   display: flex;
   align-items: center;
@@ -301,11 +337,13 @@ a.link-carrito {
     top: 63px;
     background-color: #2C3E50;
     border-radius: 3px;
+    border: 1px solid white;
   }
 
   .menu-mobile li {
     padding: 8px;
     transition: background-color 0.5s;
+    display: flex;
   }
 
   .menu-mobile li:hover {
@@ -314,19 +352,51 @@ a.link-carrito {
 
   .menu-mobile li a {
     text-decoration: none;
+    flex-grow: 1;
   }
 
-  li.usuario-logueado-mobile {
+  .usuario-logueado-mobile {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+  }
+
+  .menu-usuario-logueado-mobile {
+    position: absolute;
+    right: 249px;
+    bottom: 188px;
+    width: 250px;
+    background-color: #2C3E50;
+    border-radius: 3px;
+    border: 1px solid white;
+    border-right: none;
+  }
+
+  .menu-usuario-logueado-mobile li {
+    padding: 8px;
   }
 
   .avatar-usuario-mobile {
     width: 30px;
     margin-right: 10px;
+    margin-left: 5px;
     border-radius: 50%;
     border: 1px solid white;
+  }
+
+  .flecha-izquierda-usu-mobile {
+    position: absolute;
+    left: 5px;
+    margin: 1px 10px 0;
+    width: 15px;
+  }
+
+  .cruz-usu-mobile {
+    position: absolute;
+    left: 5px;
+    margin: 1px 10px 0;
+    width: 15px;
   }
 
   .barra-categorias-mobile {
@@ -342,11 +412,13 @@ a.link-carrito {
 
   .menu-categorias-mobile {
     position: absolute;
-    right: 250px;
-    bottom: 72px;
+    right: 249px;
+    bottom: 71px;
     width: 250px;
     background-color: #2C3E50;
     border-radius: 3px;
+    border: 1px solid white;
+    border-right: none;
   }
 
   .menu-categorias-mobile li {
@@ -369,6 +441,11 @@ a.link-carrito {
 
   .barra-nav-mobile {
     border-top: 1px solid white;
+    /* display: flex; */
+  }
+
+  .barra-nav-mobile a {
+    flex-grow: 1;
   }
 
   .barra-preguntas-frecuentes-mobile {
@@ -425,9 +502,15 @@ a.link-carrito {
     font-size: 15px;
   }
 
+  .menu-usuario-logueado-mobile {
+    right: 199px;
+    bottom: 184px;
+    width: 200px;
+  }
+
   .menu-categorias-mobile {
-    right: 200px;
-    bottom: 70px;
+    right: 199px;
+    bottom: 69px;
     width: 200px;
   }
 
@@ -473,9 +556,15 @@ a.link-carrito {
     width: 13px;
   }
 
+  .menu-usuario-logueado-mobile {
+    right: 159px;
+    bottom: 180px;
+    width: 160px;
+  }
+
   .menu-categorias-mobile {
-    right: 160px;
-    bottom: 68px;
+    right: 159px;
+    bottom: 67px;
     width: 160px;
   }
 

@@ -3,14 +3,15 @@
   require_once 'autoload.php';
   session_start();
 
-  if ($_SESSION["email"]) {
+  if (isset($_SESSION["email"])) {
     $conn_BD = new DB;
     $usuarioLogueado = $conn_BD->traerPorEmail($_SESSION["email"]);
-      var_dump($usuarioLogueado->getAvatar());
   }
 
   $avatarUsuario = "avatars/avatar-example.png";
   $nombreUsuario = "UserFirstName";
+
+  // $usuarioLogueado = "";
 
 ?>
 
@@ -46,14 +47,21 @@
     <ul class="menu-mobile hidden">
 
       <div class="barra-usuario-mobile">
-        <?php if ($usuarioLogueado == false) { ?>
+        <?php if (!isset($usuarioLogueado) || empty($usuarioLogueado)) { ?>
           <li class="con-fondo"><a href="login.php">Login</a></li>
           <li class="con-fondo"><a href="registro.php">Registro</a></li>
         <?php } else { ?>
           <li class="usuario-logueado-mobile">
-            <img class="avatar-usuario-mobile" src="<?php echo $avatarUsuario ?>" alt="avatar">
-            <span class="nombre-usuario"><?php echo $nombreUsuario ?></span>
+            <img class="avatar-usuario-mobile" src="<?php echo $usuarioLogueado->getAvatar(); ?>" alt="avatar">
+            <span class="nombre-usuario"><?php echo $usuarioLogueado->getNombre(); ?></span>
+            <img class="flecha-izquierda-usu-mobile" src="images/flecha-izquierda-blanca.png" alt="">
+            <img class="cruz-usu-mobile hidden" src="images/cruz-blanca.png" alt="">
           </li>
+          <ul class="menu-usuario-logueado-mobile hidden">
+            <li><a href="miPerfil.php">Mi perfil</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="home.php">Salir</a></li>
+          </ul>
         <?php } ?>
       </div>
 
@@ -100,8 +108,8 @@
     <ul class="barra-categorias">
       <li class="todas-las-categorias">
         Todas las categorías
-        <img class="flecha-abajo" src="images/flecha-abajo-blanca.png" alt="">
-        <img class="cruz hidden" src="images/cruz-blanca.png" alt="">
+        <img class="flecha-abajo-cat" src="images/flecha-abajo-blanca.png" alt="">
+        <img class="cruz-cat hidden" src="images/cruz-blanca.png" alt="">
       </li>
       <ul class="menu-categorias hidden">
         <li><a href="#">Categoría 1</a></li>
@@ -121,17 +129,21 @@
     </ul>
 
     <ul class="barra-usuario">
-      <?php if (!isset($usuarioLogueado)) { ?>
-        <li class="con-fondo"><a href="login.php">Login</a></li>
-        <li class="con-fondo"><a href="registro.php">Registro</a></li>
+      <?php if (!isset($usuarioLogueado) || empty($usuarioLogueado)) { ?>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="registro.php">Registro</a></li>
       <?php } else { ?>
         <li class="usuario-logueado">
           <img class="avatar-usuario" src="<?php echo $usuarioLogueado->getAvatar(); ?>" alt="avatar">
           <span class="nombre-usuario"><?php echo $usuarioLogueado->getNombre(); ?></span>
-          <ul class=" hidden">
-            <li><a href="#">Salir</a></li>
-          </ul>
+          <img class="flecha-abajo-usu" src="images/flecha-abajo-blanca.png" alt="">
+          <img class="cruz-usu hidden" src="images/cruz-blanca.png" alt="">
         </li>
+        <ul class="menu-usuario-logueado hidden">
+          <li><a href="miPerfil.php">Mi perfil</a></li>
+          <li><a href="#">Favoritos</a></li>
+          <li><a href="home.php">Salir</a></li>
+        </ul>
       <?php } ?>
 
       <a class="link-carrito" href="#"><img class="carrito" src="images/carrito-blanco.png" alt="carrito"></a>
