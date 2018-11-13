@@ -11,14 +11,19 @@ class Usuario
   protected $avatar;
   protected $activo;
 
-  public function __construct($idUsuariox, $fullnamex, $nicknamex, $countryx, $emailx, $passwordx, $avatarx, $activox)
+  public function __construct($idUsuariox= null, $fullnamex, $nicknamex, $countryx, $emailx, $passwordx, $avatarx, $activox=null)
   {
+    if ($idUsuariox==null) {
+      $this->password= password_hash($passwordx, PASSWORD_DEFAULT);
+    }else {
+      $this->password=$passwordx;
+    }
+
     $this->idUsuario=$idUsuariox;
     $this->fullname=$fullnamex;
     $this->nickname=$nicknamex;
     $this->country=$countryx;
     $this->email=$emailx;
-    $this->password=$passwordx;
     $this->avatar=$avatarx;
     $this->activo=$activox;
   }

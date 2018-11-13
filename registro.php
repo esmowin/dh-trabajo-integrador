@@ -54,6 +54,8 @@
         $conn_BD = new DB;
         $conn_BD->guardarUsuario($nuevoUsuario);
 
+        $loguear = new Auth();
+        $loguear->loguear($nuevoUsuario->getEmail());
         header('Location:home.php');
       }
 

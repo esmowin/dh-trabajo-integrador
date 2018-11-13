@@ -1,8 +1,14 @@
 <?php
 
   require_once 'autoload.php';
+  session_start();
 
-  $usuarioLogueado = true;
+  if ($_SESSION["email"]) {
+    $conn_BD = new DB;
+    $usuarioLogueado = $conn_BD->traerPorEmail($_SESSION["email"]);
+      var_dump($usuarioLogueado->getAvatar());
+  }
+
   $avatarUsuario = "avatars/avatar-example.png";
   $nombreUsuario = "UserFirstName";
 
@@ -115,13 +121,16 @@
     </ul>
 
     <ul class="barra-usuario">
-      <?php if ($usuarioLogueado == false) { ?>
+      <?php if (!isset($usuarioLogueado)) { ?>
         <li class="con-fondo"><a href="login.php">Login</a></li>
         <li class="con-fondo"><a href="registro.php">Registro</a></li>
       <?php } else { ?>
         <li class="usuario-logueado">
-          <img class="avatar-usuario" src="<?php echo $avatarUsuario ?>" alt="avatar">
-          <span class="nombre-usuario"><?php echo $nombreUsuario ?></span>
+          <img class="avatar-usuario" src="<?php echo $usuarioLogueado->getAvatar(); ?>" alt="avatar">
+          <span class="nombre-usuario"><?php echo $usuarioLogueado->getNombre(); ?></span>
+          <ul class=" hidden">
+            <li><a href="#">Salir</a></li>
+          </ul>
         </li>
       <?php } ?>
 
