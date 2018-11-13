@@ -3,7 +3,7 @@
   require_once 'autoload.php';
   session_start();
 
-  if ($_SESSION["email"]) {
+  if (isset($_SESSION["email"])) {
     $conn_BD = new DB;
     $usuarioLogueado = $conn_BD->traerPorEmail($_SESSION["email"]);
       var_dump($usuarioLogueado->getAvatar());
