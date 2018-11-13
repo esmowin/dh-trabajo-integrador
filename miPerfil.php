@@ -21,29 +21,33 @@
 
     <div class="container-principal">
 
-      <div class="perfilmain">
-        <div class="perfilusuario">
-          <img class="perfilimg" src="images/imgperfil.png" alt="Perfil">
-        </div>
-        <div class="perfilusuario">
-          <h2 class ="perfilh2">Usuario</h2>
-        </div>
-        <div>
-          <div>
-            Nombre completo: John Doe
+      <div class="container-secundario">
+
+        <div class="perfilmain">
+          <div class="perfilusuario">
+            <img class="perfilimg" src="images/imgperfil.png" alt="Perfil">
+          </div>
+          <div class="perfilusuario">
+            <h2 class ="perfilh2">Usuario</h2>
           </div>
           <div>
-            País de nacimiento: Neverland
-          </div>
-          <div>
-            Correo electronico: john@doe.com
+            <div>
+              Nombre completo: John Doe
+            </div>
+            <div>
+              País de nacimiento: Neverland
+            </div>
+            <div>
+              Correo electronico: john@doe.com
+            </div>
           </div>
         </div>
+
       </div>
 
-    </div>
+      <?php require_once 'footer.php'; ?>
 
-    <?php require_once 'footer.php'; ?>
+    </div>
 
     <script src="js/header.js"></script>
 

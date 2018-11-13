@@ -22,7 +22,7 @@
 
     if ($_POST) {
 
-      var_dump($_POST);
+      // var_dump($_POST);
       $correo = trim($_POST["login-correo"]);
       $password=trim($_POST["login-password"]);
 
@@ -39,52 +39,57 @@
 
     <div class="container-principal">
 
-      <div class="registro-titulos">
+      <div class="container-secundario">
 
-        <h1>Ingresa a tu cuenta</h1>
-        <h5>No tienes una cuenta? Regístrate en SmartPet <a href="registro.php">aquí</a>!</h5>
+        <div class="registro-titulos">
 
-      </div>
-
-      <form class="registro-formulario" action="login.php" method="post">
-
-        <div class="registro-container-campos">
-
-          <div class="registro-nombre-y-campo">
-            <label for="login-correo" class="registro-nombre">Correo electrónico:</label>
-            <div class="registro-campo">
-              <input type="text" name="login-correo" <?php if(isset($errorCorreo["errorMail"])){echo 'style="border: solid 2px red"';} ?> value="<?php echo $correo; ?>">
-              <?php
-                if (isset($errorCorreo["errorMail"])) {
-                  echo '<br><span class="registro-error">'.$errorCorreo["errorMail"].'</span>';
-                }
-              ?>
-            </div>
-          </div>
-
-          <div class="registro-nombre-y-campo">
-            <label for="login-password" class="registro-nombre">Contraseña:</label>
-            <div class="registro-campo">
-              <input type="password" name="login-password" value="" <?php if(isset($errorPassword["errorPass"])){echo 'style="border: solid 2px red"';} ?> >
-              <?php
-                if (isset($errorPassword["errorPass"])) {
-                  echo '<br><span class="registro-error">'.$errorPassword["errorPass"].'</span>';
-                }
-              ?>
-            </div>
-          </div>
-          <input type="checkbox" name="" value="">Recordarme
-
+          <h1>Ingresa a tu cuenta</h1>
+          <h5>No tienes una cuenta? Regístrate en SmartPet <a href="registro.php">aquí</a>!</h5>
 
         </div>
 
-        <button class="registro-button" type="submit" name="button">Ingresar</button>
+        <form class="registro-formulario" action="login.php" method="post">
 
-      </form>
+          <div class="registro-container-campos">
+
+            <div class="registro-nombre-y-campo">
+              <label for="login-correo" class="registro-nombre">Correo electrónico:</label>
+              <div class="registro-campo">
+                <input type="text" name="login-correo" <?php if(isset($errorCorreo["errorMail"])){echo 'style="border: solid 2px red"';} ?> value="<?php echo $correo; ?>">
+                <?php
+                  if (isset($errorCorreo["errorMail"])) {
+                    echo '<br><span class="registro-error">'.$errorCorreo["errorMail"].'</span>';
+                  }
+                ?>
+              </div>
+            </div>
+
+            <div class="registro-nombre-y-campo">
+              <label for="login-password" class="registro-nombre">Contraseña:</label>
+              <div class="registro-campo">
+                <input type="password" name="login-password" value="" <?php if(isset($errorPassword["errorPass"])){echo 'style="border: solid 2px red"';} ?> >
+                <?php
+                  if (isset($errorPassword["errorPass"])) {
+                    echo '<br><span class="registro-error">'.$errorPassword["errorPass"].'</span>';
+                  }
+                ?>
+              </div>
+            </div>
+
+            <label><input type="checkbox" name="" value="">Recordar mi cuenta</label>
+
+
+          </div>
+
+          <button class="registro-button" type="submit" name="button">Ingresar</button>
+
+        </form>
+
+      </div>
+
+      <?php require_once 'footer.php'; ?>
 
     </div>
-
-    <?php require_once 'footer.php'; ?>
 
     <script src="js/header.js"></script>
 

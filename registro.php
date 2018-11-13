@@ -67,127 +67,131 @@
 
     <div class="container-principal">
 
-      <div class="registro-titulos">
+      <div class="container-secundario">
 
-        <h1>Regístrate en SmartPet!</h1>
-        <h2>Completa tus datos</h2>
+        <div class="registro-titulos">
 
-      </div>
-
-      <form class="registro-formulario" action="registro.php" method="post" enctype="multipart/form-data">
-
-        <div class="registro-container-campos">
-
-          <div class="registro-nombre-y-campo">
-            <label for="fullname" class="registro-nombre">Nombre completo:</label>
-            <div class="registro-campo">
-
-              <input <?php if (isset($errores['fullname'])) {echo 'style="border: solid 2px red"';} ?> type="text" name="fullname" value="<?php echo $fullname ?>">
-              <?php
-                if (isset($errores['fullname'])) {
-                  echo '<br><span class="registro-error">'.$errores['fullname'].'</span>';
-                }
-              ?>
-            </div>
-          </div>
-
-          <div class="registro-nombre-y-campo">
-            <label for="nickname" class="registro-nombre">Nombre de usuario:</label>
-            <div class="registro-campo">
-              <input <?php if (isset($errores['nickname'])) {echo 'style="border: solid 2px red"';} ?> type="text" name="nickname" value="<?php echo $nickname ?>">
-              <?php
-                if (isset($errores['nickname'])) {
-                  echo '<br><span class="registro-error">'.$errores['nickname'].'</span>';
-                }
-              ?>
-            </div>
-          </div>
-
-          <div class="registro-nombre-y-campo">
-            <label for="country" class="registro-nombre">País de nacimiento:</label>
-            <div class="registro-campo">
-              <select class="registro-dropdown" <?php if (isset($errores['country'])) {echo 'style="border: solid 2px red"';} ?> name="country">
-                <option value="">-- -- -- --- Elige un país --- -- -- --</option>
-                <option value="Argentina" <?php if ($country == 'Argentina') {echo 'selected';} ?>>Argentina</option>
-                <option value="Bolivia" <?php if ($country == 'Bolivia') {echo 'selected';} ?>>Bolivia</option>
-                <option value="Brasil" <?php if ($country == 'Brasil') {echo 'selected';} ?>>Brasil</option>
-                <option value="Chile" <?php if ($country == 'Chile') {echo 'selected';} ?>>Chile</option>
-                <option value="Colombia" <?php if ($country == 'Colombia') {echo 'selected';} ?>>Colombia</option>
-                <option value="Ecuador" <?php if ($country == 'Ecuador') {echo 'selected';} ?>>Ecuador</option>
-                <option value="México" <?php if ($country == 'México') {echo 'selected';} ?>>México</option>
-                <option value="Paraguay" <?php if ($country == 'Paraguay') {echo 'selected';} ?>>Paraguay</option>
-                <option value="Perú" <?php if ($country == 'Perú') {echo 'selected';} ?>>Perú</option>
-                <option value="Uruguay" <?php if ($country == 'Uruguay') {echo 'selected';} ?>>Uruguay</option>
-                <option value="Venezuela" <?php if ($country == 'Venezuela') {echo 'selected';} ?>>Venezuela</option>
-              </select>
-              <?php
-                if (isset($errores['country'])) {
-                  echo '<br><span class="registro-error">'.$errores['country'].'</span>';
-                }
-              ?>
-            </div>
-          </div>
-
-          <div class="registro-nombre-y-campo">
-            <label for="email" class="registro-nombre">Correo electrónico:</label>
-            <div class="registro-campo">
-              <input <?php if (isset($errores['email'])) {echo 'style="border: solid 2px red"';} ?> type="text" name="email" value="<?php echo $email ?>">
-              <?php
-                if (isset($errores['email'])) {
-                  echo '<br><span class="registro-error">'.$errores['email'].'</span>';
-                }
-              ?>
-            </div>
-          </div>
-
-          <div class="registro-nombre-y-campo">
-            <label for="password1" class="registro-nombre">Contraseña:</label>
-            <div class="registro-campo">
-              <input <?php if (isset($errores['password1'])|| (isset($errores['password2']))) {echo 'style="border: solid 2px red"';} ?> type="password" name="password1" value="">
-              <?php
-                if (isset($errores['password1'])) {
-                  echo '<br><span class="registro-error">'.$errores['password1'].'</span>';
-                }
-              ?>
-            </div>
-          </div>
-
-          <div class="registro-nombre-y-campo">
-            <label for="password2" class="registro-nombre">Repetir contraseña:</label>
-            <div class="registro-campo">
-              <input <?php if (isset($errores['password2'])) {echo 'style="border: solid 2px red"';} ?> type="password" name="password2" value="">
-              <?php
-                if (isset($errores['password2'])) {
-                  echo '<br><span class="registro-error">'.$errores['password2'].'</span>';
-                }
-              ?>
-            </div>
-          </div>
-
-          <div class="registro-nombre-y-campo">
-            <label for="avatar" class="registro-nombre">Imagen de perfil:</label>
-            <div class="registro-campo">
-              <input <?php if (isset($errores['imagen'])) {echo 'style="border: solid 2px red"';} ?> class="seleccionar-archivo" type="file" name="avatar" accept=".png, .jpg, .jpeg">
-              <br>
-              <span class="registro-leyenda-archivo">Formatos: png, jpg y jpeg | Tamaño máximo: 2MB</span>
-              <?php
-                if (isset($errores['imagen'])) {
-                  echo '<br><span class="registro-error">'.$errores['imagen'].'</span>';
-                }
-              ?>
-            </div>
-          </div>
+          <h1>Regístrate en SmartPet!</h1>
+          <h2>Completa tus datos</h2>
 
         </div>
 
-        <button class="registro-button" type="submit" name="button">Enviar</button>
+        <form class="registro-formulario" action="registro.php" method="post" enctype="multipart/form-data">
 
-      </form>
+          <div class="registro-container-campos">
 
+            <div class="registro-nombre-y-campo">
+              <label for="fullname" class="registro-nombre">Nombre completo:</label>
+              <div class="registro-campo">
+
+                <input <?php if (isset($errores['fullname'])) {echo 'style="border: solid 2px red"';} ?> type="text" name="fullname" value="<?php echo $fullname ?>">
+                <?php
+                  if (isset($errores['fullname'])) {
+                    echo '<br><span class="registro-error">'.$errores['fullname'].'</span>';
+                  }
+                ?>
+              </div>
+            </div>
+
+            <div class="registro-nombre-y-campo">
+              <label for="nickname" class="registro-nombre">Nombre de usuario:</label>
+              <div class="registro-campo">
+                <input <?php if (isset($errores['nickname'])) {echo 'style="border: solid 2px red"';} ?> type="text" name="nickname" value="<?php echo $nickname ?>">
+                <?php
+                  if (isset($errores['nickname'])) {
+                    echo '<br><span class="registro-error">'.$errores['nickname'].'</span>';
+                  }
+                ?>
+              </div>
+            </div>
+
+            <div class="registro-nombre-y-campo">
+              <label for="country" class="registro-nombre">País de nacimiento:</label>
+              <div class="registro-campo">
+                <select class="registro-dropdown" <?php if (isset($errores['country'])) {echo 'style="border: solid 2px red"';} ?> name="country">
+                  <option value="">-- -- -- --- Elige un país --- -- -- --</option>
+                  <option value="Argentina" <?php if ($country == 'Argentina') {echo 'selected';} ?>>Argentina</option>
+                  <option value="Bolivia" <?php if ($country == 'Bolivia') {echo 'selected';} ?>>Bolivia</option>
+                  <option value="Brasil" <?php if ($country == 'Brasil') {echo 'selected';} ?>>Brasil</option>
+                  <option value="Chile" <?php if ($country == 'Chile') {echo 'selected';} ?>>Chile</option>
+                  <option value="Colombia" <?php if ($country == 'Colombia') {echo 'selected';} ?>>Colombia</option>
+                  <option value="Ecuador" <?php if ($country == 'Ecuador') {echo 'selected';} ?>>Ecuador</option>
+                  <option value="México" <?php if ($country == 'México') {echo 'selected';} ?>>México</option>
+                  <option value="Paraguay" <?php if ($country == 'Paraguay') {echo 'selected';} ?>>Paraguay</option>
+                  <option value="Perú" <?php if ($country == 'Perú') {echo 'selected';} ?>>Perú</option>
+                  <option value="Uruguay" <?php if ($country == 'Uruguay') {echo 'selected';} ?>>Uruguay</option>
+                  <option value="Venezuela" <?php if ($country == 'Venezuela') {echo 'selected';} ?>>Venezuela</option>
+                </select>
+                <?php
+                  if (isset($errores['country'])) {
+                    echo '<br><span class="registro-error">'.$errores['country'].'</span>';
+                  }
+                ?>
+              </div>
+            </div>
+
+            <div class="registro-nombre-y-campo">
+              <label for="email" class="registro-nombre">Correo electrónico:</label>
+              <div class="registro-campo">
+                <input <?php if (isset($errores['email'])) {echo 'style="border: solid 2px red"';} ?> type="text" name="email" value="<?php echo $email ?>">
+                <?php
+                  if (isset($errores['email'])) {
+                    echo '<br><span class="registro-error">'.$errores['email'].'</span>';
+                  }
+                ?>
+              </div>
+            </div>
+
+            <div class="registro-nombre-y-campo">
+              <label for="password1" class="registro-nombre">Contraseña:</label>
+              <div class="registro-campo">
+                <input <?php if (isset($errores['password1'])|| (isset($errores['password2']))) {echo 'style="border: solid 2px red"';} ?> type="password" name="password1" value="">
+                <?php
+                  if (isset($errores['password1'])) {
+                    echo '<br><span class="registro-error">'.$errores['password1'].'</span>';
+                  }
+                ?>
+              </div>
+            </div>
+
+            <div class="registro-nombre-y-campo">
+              <label for="password2" class="registro-nombre">Repetir contraseña:</label>
+              <div class="registro-campo">
+                <input <?php if (isset($errores['password2'])) {echo 'style="border: solid 2px red"';} ?> type="password" name="password2" value="">
+                <?php
+                  if (isset($errores['password2'])) {
+                    echo '<br><span class="registro-error">'.$errores['password2'].'</span>';
+                  }
+                ?>
+              </div>
+            </div>
+
+            <div class="registro-nombre-y-campo">
+              <label for="avatar" class="registro-nombre">Imagen de perfil:</label>
+              <div class="registro-campo">
+                <input <?php if (isset($errores['imagen'])) {echo 'style="border: solid 2px red"';} ?> class="seleccionar-archivo" type="file" name="avatar" accept=".png, .jpg, .jpeg">
+                <br>
+                <span class="registro-leyenda-archivo">Formatos: png, jpg y jpeg | Tamaño máximo: 2MB</span>
+                <?php
+                  if (isset($errores['imagen'])) {
+                    echo '<br><span class="registro-error">'.$errores['imagen'].'</span>';
+                  }
+                ?>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="registro-button" type="submit" name="button">Enviar</button>
+
+        </form>
+
+
+      </div>
+
+      <?php require_once 'footer.php'; ?>
 
     </div>
-
-    <?php require_once 'footer.php'; ?>
 
     <script src="js/header.js"></script>
 

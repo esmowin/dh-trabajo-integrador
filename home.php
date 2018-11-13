@@ -20,33 +20,37 @@
 
     <div class="container-principal">
 
-      <section class="title">
-        <h1>SmartPet</h1>
-      </section>
+      <div class="container-secundario">
 
-      <section class="title">
-        <h1>SmartPet</h1>
-      </section>
+        <section class="title">
+          <h1>SmartPet</h1>
+        </section>
 
-      <section class="title">
-        <h1>SmartPet</h1>
-      </section>
+        <section class="title">
+          <h1>SmartPet</h1>
+        </section>
 
-      <section class="title">
-        <h1>SmartPet</h1>
-      </section>
+        <section class="title">
+          <h1>SmartPet</h1>
+        </section>
 
-      <section class="title">
-        <h1>SmartPet</h1>
-      </section>
+        <section class="title">
+          <h1>SmartPet</h1>
+        </section>
 
-      <section class="title">
-        <h1>SmartPet</h1>
-      </section>
+        <section class="title">
+          <h1>SmartPet</h1>
+        </section>
+
+        <section class="title">
+          <h1>SmartPet</h1>
+        </section>
+
+      </div>
+
+      <?php require_once 'footer.php'; ?>
 
     </div>
-
-    <?php require_once 'footer.php'; ?>
 
     <script src="js/header.js"></script>
 

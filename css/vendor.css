@@ -14,9 +14,14 @@ ul {
 }
 
 .container-principal {
-  padding-top: 120px;
-  padding-bottom: 40px;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 122px;
   width: 100%;
+}
+
+.container-secundario {
+  padding-bottom: 170px;
   max-width: 1350px;
   margin: auto;
 }
@@ -24,7 +29,11 @@ ul {
 @media (max-width: 991px) {
 
   .container-principal {
-    padding-top: 73px;
+    padding-top: 75px;
+  }
+
+  .container-secundario {
+    padding-bottom: 280px;
   }
 
 }
@@ -32,7 +41,11 @@ ul {
 @media (max-width: 575px) {
 
   .container-principal {
-    padding-top: 68px;
+    padding-top: 70px;
+  }
+
+  .container-secundario {
+    padding-bottom: 410px;
   }
 
 }
