@@ -12,7 +12,7 @@
   $nombreUsuario = "UserFirstName";
 
   // Comentar o descomentar la línea de abajo para tener o no a un usuario logueado
-  // $usuarioLogueado = "";
+  //$_SESSION["email"] = "";
 
 ?>
 
@@ -136,7 +136,7 @@
       <?php } else { ?>
         <li class="usuario-logueado">
           <img class="avatar-usuario" src="<?php echo $usuarioLogueado->getAvatar(); ?>" alt="avatar">
-          <span class="nombre-usuario"><?php echo $usuarioLogueado->getNombre(); ?></span>
+          <span class="nombre-usuario"><?php echo $usuarioLogueado->getNickname(); ?></span>
           <img class="flecha-abajo-usu" src="images/flecha-abajo-blanca.png" alt="">
           <img class="cruz-usu hidden" src="images/cruz-blanca.png" alt="">
         </li>

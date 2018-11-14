@@ -40,8 +40,8 @@ class Validator{
 
       if (empty($this->nickname)) {
         $this->errores ['nickname'] = 'Debes completar este campo';
-      } else if ((strlen($this->nickname) < 3) || (strlen($this->nickname) > 30)) {
-        $this->errores ['nickname'] = 'El nombre de usuario debe tener un mínimo de 3 y un máximo de 30 caracteres';
+      } else if ((strlen($this->nickname) < 3) || (strlen($this->nickname) > 10)) {
+        $this->errores ['nickname'] = 'El nombre de usuario debe tener un mínimo de 3 y un máximo de 10 caracteres';
       } else if (!ctype_alnum(str_replace(['á', 'ã', 'â', 'à', 'é', 'ê', 'í', 'ó', 'õ', 'ô', 'ú', 'ñ', 'ç'], '', $this->nickname))) {
         $this->errores ['nickname'] = 'Se ingresaron caracteres inválidos. Este campo acepta solo letras y números (sin espacios)';
       }

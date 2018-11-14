@@ -57,6 +57,8 @@
 
         $loguear = new Auth();
         $loguear->loguear($nuevoUsuario->getEmail());
+
+        //var_dump($nuevoUsuario);
         header('Location:home.php');
       }
 
