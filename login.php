@@ -95,14 +95,14 @@
               </div>
             </div>
 
+            <label><a href="olvidecontraseña.php">Olvide mi contraseña</a></label>
+            
             <label><input type="checkbox" name="" value="">Recordar mi cuenta</label>
 
-
           </div>
-
           <button class="registro-button" type="submit" name="button">Ingresar</button>
-
         </form>
+
 
       </div>
 
