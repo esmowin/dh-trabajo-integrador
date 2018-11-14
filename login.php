@@ -43,6 +43,9 @@
 
           $loguear = new Auth();
           $loguear->loguear($usuario->getEmail());
+          if (isset($_POST["recordarusuario"])) {//deja al usuario logueado en cookie
+            $auth->recordarme($usuario->getEmail());
+          }
           header('Location:home.php');
           ////////////////////Loguear Aca///////////////////
 
@@ -98,8 +101,8 @@
             </div>
 
             <label><a href="olvidecontraseña.php">Olvide mi contraseña</a></label>
-            
-            <label><input type="checkbox" name="" value="">Recordar mi cuenta</label>
+
+            <label><input type="checkbox" name="recordarusuario" value="">Recordar mi cuenta</label>
 
           </div>
           <button class="registro-button" type="submit" name="button">Ingresar</button>
