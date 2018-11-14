@@ -1,4 +1,37 @@
 
+/* Estándars para pisar el Bootstrap */
+
+
+p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    line-height: normal;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h6 {
+    display: block;
+    font-size: .67em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+
 /* Footer abajo de todo */
 
 
@@ -39,7 +72,6 @@ footer {
 
 .footer-ubicación h3, .footer-redes-sociales h3, .footer-contacto h3 {
   font-size: 16px;
-  font-weight: bold;
 }
 
 .footer-ubicación p, .footer-redes-sociales p, .footer-contacto p {
@@ -82,6 +114,7 @@ footer {
 
 .footer-inferior a {
   color: white;
+  text-decoration: underline;
 }
 
 .footer-copyright, .footer-creditos {

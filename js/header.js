@@ -23,8 +23,10 @@ window.onload = function() {
     if (!categoriasDesplegableMobile.classList.contains("hidden")) {
       toggleCategoriasMobile();
     }
-    if (!usuarioDesplegableMobile.classList.contains("hidden")) {
-      toggleUsuarioMobile();
+    if (usuarioDisparadorMobile && usuarioDesplegableMobile) {
+      if (!usuarioDesplegableMobile.classList.contains("hidden")) {
+        toggleUsuarioMobile();
+      }
     }
   }
 
@@ -38,8 +40,10 @@ window.onload = function() {
   }
 
   var toggleCategoriasMobile = function() {
-    if (!usuarioDesplegableMobile.classList.contains("hidden")) {
-      toggleUsuarioMobile();
+    if (usuarioDisparadorMobile && usuarioDesplegableMobile) {
+      if (!usuarioDesplegableMobile.classList.contains("hidden")) {
+        toggleUsuarioMobile();
+      }
     }
     categoriasDesplegableMobile.classList.toggle("hidden");
     categoriasFlechaIzquierdaMobile.classList.toggle("hidden");
@@ -67,18 +71,22 @@ window.onload = function() {
 
   // Apertura y cierre del menú del Usuario versión DESKTOP
 
-  var usuarioDisparador = document.querySelector(".usuario-logueado");
-  var usuarioDesplegable = document.querySelector(".menu-usuario-logueado");
-  var usuarioFlechaAbajo = document.querySelector(".flecha-abajo-usu");
-  var usuarioCruz = document.querySelector(".cruz-usu");
+    var usuarioDisparador = document.querySelector(".usuario-logueado");
+    var usuarioDesplegable = document.querySelector(".menu-usuario-logueado");
+    var usuarioFlechaAbajo = document.querySelector(".flecha-abajo-usu");
+    var usuarioCruz = document.querySelector(".cruz-usu");
 
-  usuarioDisparador.addEventListener("click", toggleUsuario);
+  if (usuarioDisparador && usuarioDesplegable) {
 
-  document.addEventListener("click", function(event) {
-    if (!event.target.closest(".usuario-logueado") && !event.target.closest(".menu-usuario-logueado") && !usuarioDesplegable.classList.contains("hidden")) {
-      toggleUsuario();
-    }
-  });
+    usuarioDisparador.addEventListener("click", toggleUsuario);
+
+    document.addEventListener("click", function(event) {
+      if (!event.target.closest(".usuario-logueado") && !event.target.closest(".menu-usuario-logueado") && !usuarioDesplegable.classList.contains("hidden")) {
+        toggleUsuario();
+      }
+    });
+
+  }
 
   // Apertura y cierre del menú "hamburguer" del MOBILE
 
@@ -102,7 +110,9 @@ window.onload = function() {
   var usuarioFlechaIzquierdaMobile = document.querySelector(".flecha-izquierda-usu-mobile");
   var usuarioCruzMobile = document.querySelector(".cruz-usu-mobile");
 
-  usuarioDisparadorMobile.addEventListener("click", toggleUsuarioMobile);
+  if (usuarioDisparadorMobile && usuarioDesplegableMobile) {
+    usuarioDisparadorMobile.addEventListener("click", toggleUsuarioMobile);
+  }
 
   // Apertura y cierre del menú "Todas las categorías" versión MOBILE
 

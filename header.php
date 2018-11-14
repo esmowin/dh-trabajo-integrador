@@ -11,6 +11,7 @@
   $avatarUsuario = "avatars/avatar-example.png";
   $nombreUsuario = "UserFirstName";
 
+  // Comentar o descomentar la línea de abajo para tener o no a un usuario logueado
   // $usuarioLogueado = "";
 
 ?>
@@ -130,8 +131,8 @@
 
     <ul class="barra-usuario">
       <?php if (!isset($usuarioLogueado) || empty($usuarioLogueado)) { ?>
-        <li><a href="login.php">Login</a></li>
-        <li><a href="registro.php">Registro</a></li>
+        <li class="menu-login-registro"><a href="login.php">Login</a></li>
+        <li class="menu-login-registro"><a href="registro.php">Registro</a></li>
       <?php } else { ?>
         <li class="usuario-logueado">
           <img class="avatar-usuario" src="<?php echo $usuarioLogueado->getAvatar(); ?>" alt="avatar">
