@@ -73,11 +73,11 @@
           <span>Todas las categorías</span>
         </li>
         <ul class="menu-categorias-mobile hidden">
-          <li><a href="#">Categoría 1</a></li>
-          <li><a href="#">Categoría 2</a></li>
-          <li><a href="#">Categoría 3</a></li>
-          <li><a href="#">Categoría 4</a></li>
-          <li><a href="#">Categoría 5</a></li>
+          <li><a href="#">Perro</a></li>
+          <li><a href="#">Gato</a></li>
+          <li><a href="#">Peces</a></li>
+          <li><a href="#">Otros Animales</a></li>
+          <li><a href="#">Alimento para Mascotas</a></li>
         </ul>
 
       </div>
@@ -113,11 +113,11 @@
         <img class="cruz-cat hidden" src="images/cruz-blanca.png" alt="">
       </li>
       <ul class="menu-categorias hidden">
-        <li><a href="#">Categoría 1</a></li>
-        <li><a href="#">Categoría 2</a></li>
-        <li><a href="#">Categoría 3</a></li>
-        <li><a href="#">Categoría 4</a></li>
-        <li><a href="#">Categoría 5</a></li>
+        <li><a href="#">Perro</a></li>
+        <li><a href="#">Gato</a></li>
+        <li><a href="#">Peces</a></li>
+        <li><a href="#">Otros Animales</a></li>
+        <li><a href="#">Alimento para Mascotas</a></li>
       </ul>
     </ul>
 
