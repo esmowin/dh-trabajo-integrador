@@ -54,7 +54,7 @@
         <?php } else { ?>
           <li class="usuario-logueado-mobile">
             <img class="avatar-usuario-mobile" src="<?php echo $usuarioLogueado->getAvatar(); ?>" alt="avatar">
-            <span class="nombre-usuario"><?php echo $usuarioLogueado->getNombre(); ?></span>
+            <span class="nombre-usuario"><?php echo $usuarioLogueado->getNickname(); ?></span>
             <img class="flecha-izquierda-usu-mobile" src="images/flecha-izquierda-blanca.png" alt="">
             <img class="cruz-usu-mobile hidden" src="images/cruz-blanca.png" alt="">
           </li>
