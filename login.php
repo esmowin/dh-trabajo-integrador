@@ -15,6 +15,9 @@
     <?php
 
     require_once 'autoload.php';
+    if ($auth->estaLogueado()) {//si ya esta logueado, no lo deja entrar y lo redirije a home
+      header("Location: home.php");
+    }
 
     $errorCorreo = "";
     $errorPassword="";

@@ -18,7 +18,7 @@
     }
     public function estaLogueado()// fijarse si esta seteado  la variable de sesion
     {
-      return isset($_SESSION["email"] || $_COOKIE["email"]);
+      return isset($_SESSION["email"]) || isset($_COOKIE["email"]);
 
     }
     public function usuarioLogueado($conn)// que recibe una db. Preguntar si estaLogueado y devolver el objeto usuario con el traerPorEmail del db usando el email de sesion, sino devolver NULL
