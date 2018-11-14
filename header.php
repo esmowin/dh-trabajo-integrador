@@ -1,7 +1,7 @@
 <?php
 
   require_once 'autoload.php';
-  session_start();
+  // session_start();
 
   if (isset($_SESSION["email"])) {
     $conn_BD = new DB;
@@ -48,7 +48,7 @@
     <ul class="menu-mobile hidden">
 
       <div class="barra-usuario-mobile">
-        <?php if (!isset($usuarioLogueado) || empty($usuarioLogueado)) { ?>
+        <?php if (!$auth->estaLogueado()) { ?>
           <li class="con-fondo"><a href="login.php">Login</a></li>
           <li class="con-fondo"><a href="registro.php">Registro</a></li>
         <?php } else { ?>
@@ -61,7 +61,7 @@
           <ul class="menu-usuario-logueado-mobile hidden">
             <li><a href="miPerfil.php">Mi perfil</a></li>
             <li><a href="#">Favoritos</a></li>
-            <li><a href="home.php">Salir</a></li>
+            <li><a href="logout.php">Salir</a></li>
           </ul>
         <?php } ?>
       </div>
@@ -130,7 +130,7 @@
     </ul>
 
     <ul class="barra-usuario">
-      <?php if (!isset($usuarioLogueado) || empty($usuarioLogueado)) { ?>
+      <?php if (!$auth->estaLogueado()) { ?>
         <li class="menu-login-registro"><a href="login.php">Login</a></li>
         <li class="menu-login-registro"><a href="registro.php">Registro</a></li>
       <?php } else { ?>
@@ -143,7 +143,7 @@
         <ul class="menu-usuario-logueado hidden">
           <li><a href="miPerfil.php">Mi perfil</a></li>
           <li><a href="#">Favoritos</a></li>
-          <li><a href="home.php">Salir</a></li>
+          <li><a href="logout.php">Salir</a></li>
         </ul>
       <?php } ?>
 

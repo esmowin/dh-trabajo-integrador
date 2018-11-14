@@ -20,7 +20,6 @@
     $errorPassword="";
     $correo="";
 
-
     if ($_POST) {
 
       $correo = trim($_POST["login-correo"]);

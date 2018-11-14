@@ -5,22 +5,20 @@
 
     public function __construct()// -crear constructor con session_start() y chequear que si esta la cookie de logueado, usarla como session
     {
+      session_start();
       if (isset($_COOKIE["email"])) {
-        session_start();
         $_SESSION["email"] = $_COOKIE["email"];
       }
 
     }
     public function loguear($email)// variable session con el email del parametro
     {
-      session_start();
       $_SESSION["email"] = $email;
 
     }
     public function estaLogueado()// fijarse si esta seteado  la variable de sesion
     {
-      return isset($_SESSION["email"]);
-
+      return isset($_SESSION["email"] || $_COOKIE["email"]);
 
     }
     public function usuarioLogueado($conn)// que recibe una db. Preguntar si estaLogueado y devolver el objeto usuario con el traerPorEmail del db usando el email de sesion, sino devolver NULL
