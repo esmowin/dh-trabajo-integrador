@@ -6,7 +6,7 @@ header {
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 1;
+  z-index: 16;
   background-color: #2C3E50;
   width: 100%;
 }
@@ -346,6 +346,7 @@ a.link-carrito {
 
   .menu-mobile {
     display: block;
+    z-index: 16;
     width: 250px;
     text-align: center;
     position: absolute;

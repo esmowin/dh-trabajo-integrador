@@ -15,7 +15,10 @@
     <?php
 
     require_once 'autoload.php';
-    if ($auth->estaLogueado()) {//si ya esta logueado, no lo deja entrar y lo redirije a home
+
+    //si ya esta logueado, no lo deja entrar y lo redirige al home
+
+    if ($auth->estaLogueado()) {
       header("Location: home.php");
     }
 
@@ -31,6 +34,7 @@
       $validador = new Validator();
       $errorCorreo = $validador->validarMail($correo);
       $errorPassword = $validador->validarPass($password);
+
       if (empty($errorCorreo)&& empty($errorPassword)) {
         $conn_BD = new DB;
         $usuario=$conn_BD->traerPorEmail($correo);
@@ -41,13 +45,17 @@
         }
         if (($usuario!=null) && password_verify($password , $passUsuarioHash ) ) {
 
-          $loguear = new Auth();
-          $loguear->loguear($usuario->getEmail());
-          if (isset($_POST["recordarusuario"])) {//deja al usuario logueado en cookie
+          //loguea al usuario
+
+          $auth->loguear($usuario->getEmail());
+
+          //deja al usuario logueado en cookie si marcó el "Recordarme"
+
+          if (isset($_POST["recordarusuario"])) {
             $auth->recordarme($usuario->getEmail());
           }
+
           header('Location:home.php');
-          ////////////////////Loguear Aca///////////////////
 
         }else {
           $errorPassword["errorPass"] = "Verifique Usuario y Contraseña";
@@ -100,12 +108,14 @@
               </div>
             </div>
 
-            <label><a href="olvidecontraseña.php">Olvide mi contraseña</a></label>
+            <label class="olvide-y-recordar"><a href="olvidecontraseña.php">Olvidé mi contraseña</a></label>
 
-            <label><input type="checkbox" name="recordarusuario" value="">Recordar mi cuenta</label>
+            <label class="olvide-y-recordar"><input type="checkbox" name="recordarusuario" value="recordarme">Recordar mi cuenta</label>
 
           </div>
-          <button class="registro-button" type="submit" name="button">Ingresar</button>
+
+          <button class="registro-button" type="submit" name="">Ingresar</button>
+
         </form>
 
 

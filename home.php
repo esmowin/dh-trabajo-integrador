@@ -1,8 +1,6 @@
 <?php
 
   require_once 'autoload.php';
-  //session_start();
-
 
 ?>
 
@@ -22,7 +20,7 @@
     <?php require_once 'header.php'; ?>
 
     <div class="container-principal">
-      
+
       <div class="container-secundario">
         <!-- Bootstrap Carousel STARTS -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

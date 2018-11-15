@@ -20,7 +20,7 @@
         <div class="registro-titulos">
 
           <h1>Olvidaste tu contraseña</h1>
-          <h5>Ingresa tu correo electronico aqui:</h5>
+          <h5>Ingresa tu correo electrónico</h5>
 
         </div>
 
@@ -34,7 +34,7 @@
             </div>
           </div>
 
-          <button class="registro-button" type="submit" name="button">Recuperar Constraseña</button>
+          <button class="registro-button" type="submit" name="button">Recuperar constraseña</button>
 
         </form>
 

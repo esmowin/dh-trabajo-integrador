@@ -1,18 +1,11 @@
 <?php
 
   require_once 'autoload.php';
-  // session_start();
 
   if (isset($_SESSION["email"])) {
     $conn_BD = new DB;
     $usuarioLogueado = $conn_BD->traerPorEmail($_SESSION["email"]);
   }
-
-  $avatarUsuario = "avatars/avatar-example.png";
-  $nombreUsuario = "UserFirstName";
-
-  // Comentar o descomentar la línea de abajo para tener o no a un usuario logueado
-  //$_SESSION["email"] = "";
 
 ?>
 
@@ -73,8 +66,8 @@
           <span>Todas las categorías</span>
         </li>
         <ul class="menu-categorias-mobile hidden">
-          <li><a href="#">Perro</a></li>
-          <li><a href="#">Gato</a></li>
+          <li><a href="#">Perros</a></li>
+          <li><a href="#">Gatos</a></li>
           <li><a href="#">Peces</a></li>
           <li><a href="#">Otros Animales</a></li>
           <li><a href="#">Alimento para Mascotas</a></li>
@@ -113,8 +106,8 @@
         <img class="cruz-cat hidden" src="images/cruz-blanca.png" alt="">
       </li>
       <ul class="menu-categorias hidden">
-        <li><a href="#">Perro</a></li>
-        <li><a href="#">Gato</a></li>
+        <li><a href="#">Perros</a></li>
+        <li><a href="#">Gatos</a></li>
         <li><a href="#">Peces</a></li>
         <li><a href="#">Otros Animales</a></li>
         <li><a href="#">Alimento para Mascotas</a></li>

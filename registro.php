@@ -58,8 +58,7 @@
         $conn_BD = new DB;
         $conn_BD->guardarUsuario($nuevoUsuario);
 
-        $loguear = new Auth();
-        $loguear->loguear($nuevoUsuario->getEmail());
+        $auth->loguear($nuevoUsuario->getEmail());
 
         //var_dump($nuevoUsuario);
         header('Location:home.php');
@@ -117,7 +116,7 @@
               <label for="country" class="registro-nombre">País de nacimiento:</label>
               <div class="registro-campo">
                 <select class="registro-dropdown" <?php if (isset($errores['country'])) {echo 'style="border: solid 2px red"';} ?> name="country">
-                  <option value="">-- -- -- --- Elige un país --- -- -- --</option>
+                  <option value="">--------- Elige un país ---------</option>
                   <option value="Argentina" <?php if ($country == 'Argentina') {echo 'selected';} ?>>Argentina</option>
                   <option value="Bolivia" <?php if ($country == 'Bolivia') {echo 'selected';} ?>>Bolivia</option>
                   <option value="Brasil" <?php if ($country == 'Brasil') {echo 'selected';} ?>>Brasil</option>
@@ -179,7 +178,10 @@
               <div class="registro-campo">
                 <input <?php if (isset($errores['imagen'])) {echo 'style="border: solid 2px red"';} ?> class="seleccionar-archivo" type="file" name="avatar" accept=".png, .jpg, .jpeg">
                 <br>
-                <span class="registro-leyenda-archivo">Formatos: png, jpg y jpeg | Tamaño máximo: 2MB</span>
+                <div class="registro-leyenda-archivo">
+                  <span class="registro-leyenda-archivo-formatos">Formatos: png, jpg y jpeg</span>
+                  <span class="registro-leyenda-archivo-tamaño">Tamaño máximo: 2MB</span>
+                </div>
                 <?php
                   if (isset($errores['imagen'])) {
                     echo '<br><span class="registro-error">'.$errores['imagen'].'</span>';

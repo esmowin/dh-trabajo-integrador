@@ -36,7 +36,7 @@
     }
     public function recordarme($email)// que recibe un email y setea la cookie
     {
-      setcookie("email", $email, time()+(1000*60*60*24*365));
+      setcookie("email", $email, time() + 60*60*24*365);
     }
 
   }

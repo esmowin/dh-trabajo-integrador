@@ -76,6 +76,11 @@
   margin: 5px;
 }
 
+.olvide-y-recordar {
+  width: 250px;
+  text-align: center;
+}
+
 .registro-campo input {
   padding: 5px;
   width: 100%;
@@ -87,8 +92,11 @@
 }
 
 .registro-leyenda-archivo {
+  width: 150px;
   font-size: 10px;
-  margin: 0;
+  margin: 5px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .registro-dropdown {
