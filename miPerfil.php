@@ -1,6 +1,13 @@
 <?php
 
-  require_once 'autoload.php';
+require_once 'autoload.php';
+
+if (!$auth->estaLogueado()) {//si ya esta logueado, no lo deja entrar y lo redirije a home
+  header("Location: home.php");
+}
+
+$conn_BD = new DB;
+$usuario= $conn_BD->traerPorEmail($_SESSION["email"]);
 
 ?>
 
@@ -26,20 +33,25 @@
 
         <div class="perfilmain">
           <div class="perfilusuario">
-            <img class="perfilimg" src="images/imgperfil.png" alt="Perfil">
+            <img class="perfilimg" src="<?php echo $usuario->getAvatar(); ?>" alt="Perfil">
           </div>
           <div class="perfilusuario">
             <h2 class ="perfilh2">Usuario</h2>
           </div>
           <div>
             <div>
-              Nombre completo: John Doe
+              <label for="">Nombre Completo: </label>
+              <span><?php echo $usuario->getNombre(); ?></span>
             </div>
+            <br>
             <div>
-              País de nacimiento: Neverland
+              <label for="">Pais de Nacimiento: </label>
+              <span><?php echo $usuario->getCountry(); ?></span>  <!-- País de nacimiento: Neverland -->
             </div>
+            <br>
             <div>
-              Correo electronico: john@doe.com
+              <label for="">Email: </label>
+              <span><?php echo $usuario->getEmail(); ?></span><!-- Correo electronico: john@doe.com -->
             </div>
           </div>
         </div>
