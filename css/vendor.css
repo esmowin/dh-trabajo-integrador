@@ -18,7 +18,7 @@ ul {
 .container-principal {
   position: relative;
   min-height: 100vh;
-  padding-top: 110px;
+  padding-top: 122px;
   width: 100%;
 }
 
@@ -31,7 +31,7 @@ ul {
 @media (max-width: 991px) {
 
   .container-principal {
-    padding-top: 60px;
+    padding-top: 70px;
   }
 
   .container-secundario {
@@ -43,7 +43,7 @@ ul {
 @media (max-width: 575px) {
 
   .container-principal {
-    padding-top: 55px;
+    padding-top: 63px;
   }
 
   .container-secundario {

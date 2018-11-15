@@ -36,21 +36,21 @@ $usuario= $conn_BD->traerPorEmail($_SESSION["email"]);
             <img class="perfilimg" src="<?php echo $usuario->getAvatar(); ?>" alt="Perfil">
           </div>
           <div class="perfilusuario">
-            <h2 class ="perfilh2">Usuario</h2>
+            <h2 class ="perfilh2"><?php echo $usuario->getNickname(); ?></h2>
           </div>
           <div>
             <div>
-              <label for="">Nombre Completo: </label>
+              <label for=""><u>Nombre Completo</u>: </label>
               <span><?php echo $usuario->getNombre(); ?></span>
             </div>
             <br>
             <div>
-              <label for="">Pais de Nacimiento: </label>
+              <label for=""><u>País de Nacimiento</u>: </label>
               <span><?php echo $usuario->getCountry(); ?></span>  <!-- País de nacimiento: Neverland -->
             </div>
             <br>
             <div>
-              <label for="">Email: </label>
+              <label for=""><u>Email</u>: </label>
               <span><?php echo $usuario->getEmail(); ?></span><!-- Correo electronico: john@doe.com -->
             </div>
           </div>

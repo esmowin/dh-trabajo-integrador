@@ -1,6 +1,7 @@
 
 .perfilusuario {
   width: auto;
+  margin: 10px 0;
 }
 
 .perfilmain {
@@ -9,9 +10,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 10px;
+  padding: 10px;
   border-radius: 5px;
-  border: solid 2px #383737;
+  border: solid 1px #383737;
   background-color: white;
 }
 
@@ -23,5 +24,5 @@
 
 .perfilimg {
   width: 200px;
-  border: solid 2px #383737;
+  border: solid 1px #383737;
 }
