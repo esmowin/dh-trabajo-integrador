@@ -63,31 +63,34 @@
         </div>
         <!-- Bootstrap Carousel ENDS -->
 
+        <?php
+        $productos = [
+        "camas_mascotas"=>["titulo"=>"Cama Para mascotas", "precio"=>" ","imagen"=>"imgProductos/camas_mascotas.jpg"],
+        "alimento_perros"=>["titulo"=>"Alimento Balanceado", "precio"=>" ","imagen"=>"imgProductos/alimento_perros.jpg"],
+        "comedero"=>["titulo"=>"Comedero para mascotas", "precio"=>" ","imagen"=>"imgProductos/comedero.jpg"],
+        "ropa_perros"=>["titulo"=>"Ropa para Mascotas", "precio"=>" ","imagen"=>"imgProductos/ropa_perros.jpg"],
+        "arnes"=>["titulo"=>"Arnes de Paseo", "precio"=>" ","imagen"=>"imgProductos/arnes.jpg"],
+        "cucha"=>["titulo"=>"Cucha para Perros", "precio"=>" ","imagen"=>"imgProductos/cucha.jpg"],
+        "rascador_gatos"=>["titulo"=>"Rascador para Gatos", "precio"=>" ","imagen"=>"imgProductos/rascador_gatos.jpg"],
+        "acuario"=>["titulo"=>"Acuario para Peces", "precio"=>" ","imagen"=>"imgProductos/acuario.jpeg"]
+        ];
+       ?>
 
 
-        <section class="title">
-          <h1>SmartPet</h1>
+
+        <section class="container-fluid seccion_productos">
+          <h2 class="titular">Ofertas del día</h2>
+          <div class="container-fluid container_productos">
+            <?php foreach ($productos as $key => $value) {?>
+              <div class="producto">
+              <img src="<?php echo $productos[$key]["imagen"];?>" alt="" width="400">
+              <h3><?php echo $productos[$key]["titulo"]; ?></h3>
+              <h4><?php echo $productos[$key]["precio"]; ?></h4>
+              </div>
+            <?php } ?>
+          </div>
         </section>
 
-        <section class="title">
-          <h1>SmartPet</h1>
-        </section>
-
-        <section class="title">
-          <h1>SmartPet</h1>
-        </section>
-
-        <section class="title">
-          <h1>SmartPet</h1>
-        </section>
-
-        <section class="title">
-          <h1>SmartPet</h1>
-        </section>
-
-        <section class="title">
-          <h1>SmartPet</h1>
-        </section>
 
       </div>
 
