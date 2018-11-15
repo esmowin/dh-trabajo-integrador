@@ -108,7 +108,7 @@
               </div>
             </div>
 
-            <label class="olvide-y-recordar"><a href="olvidecontraseña.php">Olvidé mi contraseña</a></label>
+            <label class="olvide-y-recordar"><a href="olvideContrasenia.php">Olvidé mi contraseña</a></label>
 
             <label class="olvide-y-recordar"><input type="checkbox" name="recordarusuario" value="recordarme">Recordar mi cuenta</label>
 
