@@ -38,7 +38,7 @@
 
     <!-- Inicio menú mobile -->
 
-    <ul class="menu-mobile hidden">
+    <ul class="menu-mobile" style="display:none">
 
       <div class="barra-usuario-mobile">
         <?php if (!$auth->estaLogueado()) { ?>
@@ -51,7 +51,7 @@
             <img class="flecha-izquierda-usu-mobile" src="images/flecha-izquierda-blanca.png" alt="">
             <img class="cruz-usu-mobile hidden" src="images/cruz-blanca.png" alt="">
           </li>
-          <ul class="menu-usuario-logueado-mobile hidden">
+          <ul class="menu-usuario-logueado-mobile" style="display:none">
             <li><a href="miPerfil.php">Mi perfil</a></li>
             <li><a href="#">Favoritos</a></li>
             <li><a href="logout.php">Salir</a></li>
@@ -65,7 +65,7 @@
           <img class="cruz-mobile hidden" src="images/cruz-blanca.png" alt="">
           <span>Todas las categorías</span>
         </li>
-        <ul class="menu-categorias-mobile hidden">
+        <ul class="menu-categorias-mobile" style="display:none">
           <li><a href="#">Perros</a></li>
           <li><a href="#">Gatos</a></li>
           <li><a href="#">Peces</a></li>
@@ -105,7 +105,7 @@
         <img class="flecha-abajo-cat" src="images/flecha-abajo-blanca.png" alt="">
         <img class="cruz-cat hidden" src="images/cruz-blanca.png" alt="">
       </li>
-      <ul class="menu-categorias hidden">
+      <ul class="menu-categorias" style="display:none">
         <li><a href="#">Perros</a></li>
         <li><a href="#">Gatos</a></li>
         <li><a href="#">Peces</a></li>
@@ -133,7 +133,7 @@
           <img class="flecha-abajo-usu" src="images/flecha-abajo-blanca.png" alt="">
           <img class="cruz-usu hidden" src="images/cruz-blanca.png" alt="">
         </li>
-        <ul class="menu-usuario-logueado hidden">
+        <ul class="menu-usuario-logueado" style="display:none">
           <li><a href="miPerfil.php">Mi perfil</a></li>
           <li><a href="#">Favoritos</a></li>
           <li><a href="logout.php">Salir</a></li>

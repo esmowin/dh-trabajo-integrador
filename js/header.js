@@ -1,53 +1,53 @@
-window.onload = function() {
+$(window).on("load", function() {
 
 
   // Defino las funciones para mostrar y esconder los menús
 
 
   var toggleCategorias = function() {
-    categoriasDesplegable.classList.toggle("hidden");
-    categoriasFlechaAbajo.classList.toggle("hidden");
-    categoriasCruz.classList.toggle("hidden");
+    $(".menu-categorias").slideToggle("fast");
+    $(".flecha-abajo-cat").toggleClass("hidden");
+    $(".cruz-cat").toggleClass("hidden");
   }
 
   var toggleUsuario = function() {
-    usuarioDesplegable.classList.toggle("hidden");
-    usuarioFlechaAbajo.classList.toggle("hidden");
-    usuarioCruz.classList.toggle("hidden");
+    $(".menu-usuario-logueado").slideToggle("fast");
+    $(".flecha-abajo-usu").toggleClass("hidden");
+    $(".cruz-usu").toggleClass("hidden");
   }
 
   var toggleMenuHamburguer = function() {
-    hamburguerDesplegable.classList.toggle("hidden");
-    imagenHamburguer.classList.toggle("hidden");
-    imagenCruz.classList.toggle("hidden");
-    if (!categoriasDesplegableMobile.classList.contains("hidden")) {
-      toggleCategoriasMobile();
-    }
-    if (usuarioDisparadorMobile && usuarioDesplegableMobile) {
-      if (!usuarioDesplegableMobile.classList.contains("hidden")) {
+    $(".menu-mobile").slideToggle("fast");
+    $(".menu-hamburger").toggleClass("hidden");
+    $(".menu-hamburger-close").toggleClass("hidden");
+    if ($(".usuario-logueado-mobile").length) {
+      if ($(".menu-usuario-logueado-mobile").css("display") != "none") {
         toggleUsuarioMobile();
       }
+    }
+    if ($(".menu-categorias-mobile").css("display") != "none") {
+      toggleCategoriasMobile();
     }
   }
 
   var toggleUsuarioMobile = function() {
-    if (!categoriasDesplegableMobile.classList.contains("hidden")) {
+    if ($(".menu-categorias-mobile").css("display") != "none") {
       toggleCategoriasMobile();
     }
-    usuarioDesplegableMobile.classList.toggle("hidden");
-    usuarioFlechaIzquierdaMobile.classList.toggle("hidden");
-    usuarioCruzMobile.classList.toggle("hidden");
+    $(".menu-usuario-logueado-mobile").slideToggle("fast");
+    $(".flecha-izquierda-usu-mobile").toggleClass("hidden");
+    $(".cruz-usu-mobile").toggleClass("hidden");
   }
 
   var toggleCategoriasMobile = function() {
-    if (usuarioDisparadorMobile && usuarioDesplegableMobile) {
-      if (!usuarioDesplegableMobile.classList.contains("hidden")) {
+    if ($(".usuario-logueado-mobile").length) {
+      if ($(".menu-usuario-logueado-mobile").css("display") != "none") {
         toggleUsuarioMobile();
       }
     }
-    categoriasDesplegableMobile.classList.toggle("hidden");
-    categoriasFlechaIzquierdaMobile.classList.toggle("hidden");
-    categoriasCruzMobile.classList.toggle("hidden");
+    $(".menu-categorias-mobile").slideToggle("fast");
+    $(".flecha-izquierda-mobile").toggleClass("hidden");
+    $(".cruz-mobile").toggleClass("hidden");
   }
 
 
@@ -56,32 +56,22 @@ window.onload = function() {
 
   // Apertura y cierre del menú "Todas las categorías" versión DESKTOP
 
-  var categoriasDisparador = document.querySelector(".todas-las-categorias");
-  var categoriasDesplegable = document.querySelector(".menu-categorias");
-  var categoriasFlechaAbajo = document.querySelector(".flecha-abajo-cat");
-  var categoriasCruz = document.querySelector(".cruz-cat");
+  $(".todas-las-categorias").on("click", toggleCategorias);
 
-  categoriasDisparador.addEventListener("click", toggleCategorias);
-
-  document.addEventListener("click", function(event) {
-    if (!event.target.closest(".todas-las-categorias") && !event.target.closest(".menu-categorias") && !categoriasDesplegable.classList.contains("hidden")) {
+  $(document).on("click", function(event) {
+    if (!event.target.closest(".todas-las-categorias") && !event.target.closest(".menu-categorias") && $(".menu-categorias").css("display") != "none") {
       toggleCategorias();
     }
   });
 
   // Apertura y cierre del menú del Usuario versión DESKTOP
 
-    var usuarioDisparador = document.querySelector(".usuario-logueado");
-    var usuarioDesplegable = document.querySelector(".menu-usuario-logueado");
-    var usuarioFlechaAbajo = document.querySelector(".flecha-abajo-usu");
-    var usuarioCruz = document.querySelector(".cruz-usu");
+  if ($(".usuario-logueado").length) {
 
-  if (usuarioDisparador && usuarioDesplegable) {
+    $(".usuario-logueado").on("click", toggleUsuario);
 
-    usuarioDisparador.addEventListener("click", toggleUsuario);
-
-    document.addEventListener("click", function(event) {
-      if (!event.target.closest(".usuario-logueado") && !event.target.closest(".menu-usuario-logueado") && !usuarioDesplegable.classList.contains("hidden")) {
+    $(document).on("click", function(event) {
+      if (!event.target.closest(".usuario-logueado") && !event.target.closest(".menu-usuario-logueado") && $(".menu-usuario-logueado").css("display") != "none") {
         toggleUsuario();
       }
     });
@@ -90,37 +80,22 @@ window.onload = function() {
 
   // Apertura y cierre del menú "hamburguer" del MOBILE
 
-  var hamburguerDisparador = document.querySelector(".area-menu-hamburger");
-  var hamburguerDesplegable = document.querySelector(".menu-mobile");
-  var imagenHamburguer = document.querySelector(".menu-hamburger");
-  var imagenCruz = document.querySelector(".menu-hamburger-close");
+  $(".area-menu-hamburger").on("click", toggleMenuHamburguer);
 
-  hamburguerDisparador.addEventListener("click", toggleMenuHamburguer);
-
-  document.addEventListener("click", function(event) {
-    if (!event.target.closest(".area-menu-hamburger") && !event.target.closest(".menu-mobile") && !hamburguerDesplegable.classList.contains("hidden")) {
+  $(document).on("click", function(event) {
+    if (!event.target.closest(".area-menu-hamburger") && !event.target.closest(".menu-mobile") && $(".menu-mobile").css("display") != "none") {
       toggleMenuHamburguer();
     }
   });
 
   // Apertura y cierre del menú Usuario versión MOBILE
 
-  var usuarioDisparadorMobile = document.querySelector(".usuario-logueado-mobile");
-  var usuarioDesplegableMobile = document.querySelector(".menu-usuario-logueado-mobile");
-  var usuarioFlechaIzquierdaMobile = document.querySelector(".flecha-izquierda-usu-mobile");
-  var usuarioCruzMobile = document.querySelector(".cruz-usu-mobile");
-
-  if (usuarioDisparadorMobile && usuarioDesplegableMobile) {
-    usuarioDisparadorMobile.addEventListener("click", toggleUsuarioMobile);
+  if ($(".usuario-logueado-mobile").length) {
+    $(".usuario-logueado-mobile").on("click", toggleUsuarioMobile);
   }
 
   // Apertura y cierre del menú "Todas las categorías" versión MOBILE
 
-  var categoriasDisparadorMobile = document.querySelector(".todas-las-categorias-mobile");
-  var categoriasDesplegableMobile = document.querySelector(".menu-categorias-mobile");
-  var categoriasFlechaIzquierdaMobile = document.querySelector(".flecha-izquierda-mobile");
-  var categoriasCruzMobile = document.querySelector(".cruz-mobile");
+  $(".todas-las-categorias-mobile").on("click", toggleCategoriasMobile);
 
-  categoriasDisparadorMobile.addEventListener("click", toggleCategoriasMobile);
-
-}
+})
