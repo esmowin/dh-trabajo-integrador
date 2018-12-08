@@ -117,17 +117,6 @@
               <div class="registro-campo">
                 <select class="registro-dropdown" <?php if (isset($errores['country'])) {echo 'style="border: solid 2px red"';} ?> name="country">
                   <option value="">--------- Elige un país ---------</option>
-                  <option value="Argentina" <?php if ($country == 'Argentina') {echo 'selected';} ?>>Argentina</option>
-                  <option value="Bolivia" <?php if ($country == 'Bolivia') {echo 'selected';} ?>>Bolivia</option>
-                  <option value="Brasil" <?php if ($country == 'Brasil') {echo 'selected';} ?>>Brasil</option>
-                  <option value="Chile" <?php if ($country == 'Chile') {echo 'selected';} ?>>Chile</option>
-                  <option value="Colombia" <?php if ($country == 'Colombia') {echo 'selected';} ?>>Colombia</option>
-                  <option value="Ecuador" <?php if ($country == 'Ecuador') {echo 'selected';} ?>>Ecuador</option>
-                  <option value="México" <?php if ($country == 'México') {echo 'selected';} ?>>México</option>
-                  <option value="Paraguay" <?php if ($country == 'Paraguay') {echo 'selected';} ?>>Paraguay</option>
-                  <option value="Perú" <?php if ($country == 'Perú') {echo 'selected';} ?>>Perú</option>
-                  <option value="Uruguay" <?php if ($country == 'Uruguay') {echo 'selected';} ?>>Uruguay</option>
-                  <option value="Venezuela" <?php if ($country == 'Venezuela') {echo 'selected';} ?>>Venezuela</option>
                 </select>
                 <?php
                   if (isset($errores['country'])) {
@@ -135,6 +124,10 @@
                   }
                 ?>
               </div>
+            </div>
+
+            <div class="registro-nombre-y-campo" id="campo-provincia">
+              <!-- Acá va el campo "Provincia" en el caso de que se elija "Argentina" como país de nacimiento -->
             </div>
 
             <div class="registro-nombre-y-campo">
@@ -206,6 +199,7 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/header.js"></script>
+    <script src="js/api.js"></script>
 
   </body>
 </html>
