@@ -13,7 +13,7 @@
   <link rel="icon" href="images/logo.png">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" id="theme">
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
   <body class="oli">

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartPet - Registro</title>
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" id="theme">
     <link rel="icon" href="images/logo.png">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
