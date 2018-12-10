@@ -53,6 +53,11 @@ $usuario= $conn_BD->traerPorEmail($_SESSION["email"]);
               <label for=""><u>Email</u>: </label>
               <span><?php echo $usuario->getEmail(); ?></span><!-- Correo electronico: john@doe.com -->
             </div>
+            <div>
+              <label for=""><u>Tema</u>: </label>
+              <button type="button" name="buttonclassic" id="buttonclassic">Clasico</button>
+              <button type="button" name="buttonnavidad" id="buttonnavidad">Navidad</button>
+            </div>
           </div>
         </div>
 
@@ -65,6 +70,7 @@ $usuario= $conn_BD->traerPorEmail($_SESSION["email"]);
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/header.js"></script>
+    <script src="js/themes.js"></script>
 
   </body>
 </html>

@@ -34,14 +34,3 @@ document.getElementById('buttonclassic').addEventListener('click', function () {
   document.getElementById('theme').href = 'css/styles.css';
   document.cookie = 'theme=classic; expires=' + now.toUTCString() + ";"
 });
-// // document.getElementsByClassName('themechange')
-//
-// let darkThemeEnabled = document.nav.backgroundcolor.toggle('dark-theme');
-// localStorage.setItem('dark-theme-enabled', darkThemeEnabled);
-//
-// if (JSON.parse(localStorage.getItem('dark-theme-enabled'))) {
-//   document.body.classList.add('dark-theme');
-// }
-// document.getElementById('buttonID').onclick = function () {
-//     document.getElementById('theme_css').href = '../red.css';
-// };

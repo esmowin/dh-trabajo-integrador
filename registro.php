@@ -200,6 +200,8 @@
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/header.js"></script>
     <script src="js/api.js"></script>
+    <script src="js/themes.js"></script>
+
 
   </body>
 </html>

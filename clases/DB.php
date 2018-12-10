@@ -4,7 +4,7 @@ class DB
 {
   private $dsn = "mysql:host=localhost; dbname=smartpet; charset=utf8mb4; port=3306";
   private $usuario = "root";
-  private $pass = "";
+  private $pass = "root";
   private $opt=[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION];
   private $conn;
 

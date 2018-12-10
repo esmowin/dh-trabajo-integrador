@@ -143,6 +143,7 @@
       <a class="link-carrito" href="#"><img class="carrito" src="images/carrito-blanco.png" alt="carrito"></a>
 
     </ul>
+    <script src="js/themes.js"></script>
 
   </nav>
 
