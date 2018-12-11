@@ -5,7 +5,6 @@ var time = now.getTime();
 time += 3600 * 1000;
 now.setTime(time);
 
-window.onload = function(){
   // chequea si la cookie theme esta seteada
   if (document.cookie.length != 0)
   {
@@ -22,7 +21,6 @@ window.onload = function(){
       }
     }
   }
-}
 
 
 document.getElementById('buttonnavidad').addEventListener('click', function () {

@@ -201,6 +201,7 @@
     <script src="js/header.js"></script>
     <script src="js/api.js"></script>
     <script src="js/themes.js"></script>
+    <script src="js/validator.js"></script>
 
 
   </body>
