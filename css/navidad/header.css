@@ -128,7 +128,7 @@ align-items: center;
 .menu-categorias {
   position: absolute;
   top: 37px;
-  background-color: #2C3E50;
+  background-color: var(--rojo);
   border-radius: 3px;
   border: 1px solid white;
 }
@@ -219,7 +219,7 @@ align-items: center;
   position: absolute;
   top: 40px;
   right: 75px;
-  background-color: #2C3E50;
+  background-color: var(--rojo);
   border-radius: 3px;
   border: 1px solid white;
 }
