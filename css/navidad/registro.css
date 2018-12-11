@@ -6,7 +6,7 @@
   width: 80%;
   max-width: 450px;
   padding: 10px;
-  background-color: #2C3E50;
+  background-color: var(--rojo);
   text-align: center;
 }
 
