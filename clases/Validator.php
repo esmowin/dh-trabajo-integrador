@@ -73,16 +73,16 @@ class Validator{
 
       if (empty($this->password1)) {
         $this->errores ['password1'] = 'Debes completar este campo';
-      } else if ((strlen($this->password1) < 8) || (strlen($this->password1) > 20)) {
-        $errores ['password1'] = 'La contraseña debe tener un mínimo de 8 y un máximo de 20 caracteres';
+      } else if ((strlen($this->password1) < 6) || (strlen($this->password1) > 20)) {
+        $errores ['password1'] = 'La contraseña debe tener un mínimo de 6 y un máximo de 20 caracteres';
       }
 
       // Valido el "Repetir contraseña"
 
       if (empty($this->password2)) {
         $this->errores ['password2'] = 'Debes completar este campo';
-      } else if ((strlen($this->password2) < 8) || (strlen($this->password2) > 20)) {
-        $this->errores ['password2'] = 'La contraseña debe tener un mínimo de 8 y un máximo de 20 caracteres';
+      } else if ((strlen($this->password2) < 6) || (strlen($this->password2) > 20)) {
+        $this->errores ['password2'] = 'La contraseña debe tener un mínimo de 6 y un máximo de 20 caracteres';
       } else if ($this->password2 !== $this->password1) {
         $this->errores ['password2'] = 'Las contraseñas ingresadas no coinciden';
       }
@@ -153,8 +153,8 @@ class Validator{
       if (empty($pass)) {
         $error ["errorPass"] = 'Debes completar este campo';
         return $error;
-      } else if ((strlen($pass) < 8) || (strlen($pass) > 20)) {
-        $error ["errorPass"] = 'La contraseña debe tener un mínimo de 8 y un máximo de 20 caracteres';
+      } else if ((strlen($pass) < 6) || (strlen($pass) > 20)) {
+        $error ["errorPass"] = 'La contraseña debe tener un mínimo de 6 y un máximo de 20 caracteres';
       }
       return $error;
     }

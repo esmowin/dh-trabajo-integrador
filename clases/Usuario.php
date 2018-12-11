@@ -3,15 +3,15 @@
 class Usuario
 {
   protected $idUsuario;
-  protected $fullname;
+  protected $name;
   protected $nickname;
   protected $country;
   protected $email;
   protected $password;
   protected $avatar;
-  protected $activo;
+  protected $active;
 
-  public function __construct($idUsuariox= null, $fullnamex, $nicknamex, $countryx, $emailx, $passwordx, $avatarx, $activox=null)
+  public function __construct($idUsuariox= null, $namex, $nicknamex, $countryx, $emailx, $passwordx, $avatarx, $activex=null)
   {
     if ($idUsuariox==null) {
       $this->password= password_hash($passwordx, PASSWORD_DEFAULT);
@@ -20,17 +20,17 @@ class Usuario
     }
 
     $this->idUsuario=$idUsuariox;
-    $this->fullname=$fullnamex;
+    $this->name=$namex;
     $this->nickname=$nicknamex;
     $this->country=$countryx;
     $this->email=$emailx;
     $this->avatar=$avatarx;
-    $this->activo=$activox;
+    $this->active=$activex;
   }
 
   public function getNombre()
   {
-    return $this->fullname;
+    return $this->name;
   }
   public function getNickname()
   {
