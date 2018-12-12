@@ -20,11 +20,15 @@ class DB
   public function guardarUsuario(Usuario $usuario){
 
     //$stmt = $this->conn->prepare("INSERT INTO users (fullname, nickname, country, email, password, avatar, activo) VALUES (:fullname, :nickname, :country, :email, :password, :avatar, 1)");
-    $stmt = $this->conn->prepare("Insert into users values(default, :name, :nickname, :country, :email, :password, :avatar, 1)");
+    $stmt = $this->conn->prepare("
+    INSERT INTO users (name, nickname, country, state, email, password, avatar)
+    VALUES (:name, :nickname, :country, :state, :email, :password, :avatar)
+    ");
 
     $stmt->bindValue(":name",$usuario->getNombre());
     $stmt->bindValue(":nickname",$usuario->getNickname());
     $stmt->bindValue(":country",$usuario->getCountry());
+    $stmt->bindValue(":state",$usuario->getState());
     $stmt->bindValue(":email",$usuario->getEmail());
     $stmt->bindValue(":password",$usuario->getPassword());
     $stmt->bindValue(":avatar",$usuario->getAvatar());
@@ -76,9 +80,11 @@ class DB
         $resultados['name'],
         $resultados['nickname'],
         $resultados['country'],
+        $resultados['state'],
         $resultados['email'],
         $resultados['password'],
         $resultados['avatar'],
+        $resultados['admin'],
         $resultados['active']);
 
     }else{
