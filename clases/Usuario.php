@@ -3,15 +3,17 @@
 class Usuario
 {
   protected $idUsuario;
-  protected $fullname;
+  protected $name;
   protected $nickname;
   protected $country;
+  protected $state;
   protected $email;
   protected $password;
   protected $avatar;
-  protected $activo;
+  protected $admin;
+  protected $active;
 
-  public function __construct($idUsuariox= null, $fullnamex, $nicknamex, $countryx, $emailx, $passwordx, $avatarx, $activox=null)
+  public function __construct($idUsuariox= null, $namex, $nicknamex, $countryx, $statex=null, $emailx, $passwordx, $avatarx, $adminx=null, $activex=null)
   {
     if ($idUsuariox==null) {
       $this->password= password_hash($passwordx, PASSWORD_DEFAULT);
@@ -20,17 +22,19 @@ class Usuario
     }
 
     $this->idUsuario=$idUsuariox;
-    $this->fullname=$fullnamex;
+    $this->name=$namex;
     $this->nickname=$nicknamex;
     $this->country=$countryx;
+    $this->state=$statex;
     $this->email=$emailx;
     $this->avatar=$avatarx;
-    $this->activo=$activox;
+    $this->admin=$adminx;
+    $this->active=$activex;
   }
 
   public function getNombre()
   {
-    return $this->fullname;
+    return $this->name;
   }
   public function getNickname()
   {
@@ -39,6 +43,10 @@ class Usuario
   public function getCountry()
   {
     return $this->country;
+  }
+  public function getState()
+  {
+    return $this->state;
   }
   public function getEmail()
   {
@@ -51,6 +59,14 @@ class Usuario
   public function getAvatar()
   {
     return $this->avatar;
+  }
+  public function getAdmin()
+  {
+    return $this->admin;
+  }
+  public function getActive()
+  {
+    return $this->active;
   }
 
 }

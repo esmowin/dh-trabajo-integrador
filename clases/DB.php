@@ -19,12 +19,16 @@ class DB
 
   public function guardarUsuario(Usuario $usuario){
 
-    //$stmt = $this->conn->prepare("INSERT INTO usuarios (fullname, nickname, country, email, password, avatar, activo) VALUES (:fullname, :nickname, :country, :email, :password, :avatar, 1)");
-    $stmt = $this->conn->prepare("Insert into usuarios values(default, :fullname, :nickname, :country, :email, :password, :avatar, 1)");
+    //$stmt = $this->conn->prepare("INSERT INTO users (fullname, nickname, country, email, password, avatar, activo) VALUES (:fullname, :nickname, :country, :email, :password, :avatar, 1)");
+    $stmt = $this->conn->prepare("
+    INSERT INTO users (name, nickname, country, state, email, password, avatar)
+    VALUES (:name, :nickname, :country, :state, :email, :password, :avatar)
+    ");
 
-    $stmt->bindValue(":fullname",$usuario->getNombre());
+    $stmt->bindValue(":name",$usuario->getNombre());
     $stmt->bindValue(":nickname",$usuario->getNickname());
     $stmt->bindValue(":country",$usuario->getCountry());
+    $stmt->bindValue(":state",$usuario->getState());
     $stmt->bindValue(":email",$usuario->getEmail());
     $stmt->bindValue(":password",$usuario->getPassword());
     $stmt->bindValue(":avatar",$usuario->getAvatar());
@@ -39,7 +43,7 @@ class DB
   }
 
   public function traerTodo(){
-    $stmt = $this->conn->prepare("SELECT * FROM usuarios");
+    $stmt = $this->conn->prepare("SELECT * FROM users");
 
     $stmt->execute();
 
@@ -48,19 +52,19 @@ class DB
     foreach ($resultados as $cadaUsuario) {
       $usuarios[] = new Usuario(
         $cadaUsuario->idUsuario,
-        $cadaUsuario->fullname,
+        $cadaUsuario->name,
         $cadaUsuario->nickname,
         $cadaUsuario->country,
         $cadaUsuario->email,
         $cadaUsuario->password,
         $cadaUsuario->avatar,
-        $cadaUsuario->activo);
+        $cadaUsuario->active);
     }
     return $usuarios;
   }
 
   public function traerPorEmail($email) {
-    $stmt = $this->conn->prepare("SELECT * FROM usuarios WHERE email = :email" );
+    $stmt = $this->conn->prepare("SELECT * FROM users WHERE email = :email" );
 
     $stmt->bindValue(":email",$email);
 
@@ -68,16 +72,20 @@ class DB
 
     $resultados = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    // var_dump($resultados);
+
     if ($resultados){
       return new Usuario(
-        $resultados['idUsuario'],
-        $resultados['fullname'],
+        $resultados['id'],
+        $resultados['name'],
         $resultados['nickname'],
         $resultados['country'],
+        $resultados['state'],
         $resultados['email'],
         $resultados['password'],
         $resultados['avatar'],
-        $resultados['activo']);
+        $resultados['admin'],
+        $resultados['active']);
 
     }else{
       return null;
@@ -86,7 +94,7 @@ class DB
 
   public function traerUsuario($user, $pass)
   {
-    $stmt = $this->conn->prepare("SELECT * FROM usuarios WHERE user = :user AND password = :pass" );
+    $stmt = $this->conn->prepare("SELECT * FROM users WHERE user = :user AND password = :pass" );
 
     $stmt->bindValue(":email", $email, PDO::PARAM_STR);
     $stmt->bindValue(":pass", $pass, PDO::PARAM_STR);
@@ -97,13 +105,13 @@ class DB
     if ($resultados){
       return new Usuario(
         $resultados['idUsuario'],
-        $resultados['fullname'],
+        $resultados['name'],
         $resultados['nickname'],
         $resultados['country'],
         $resultados['email'],
         $resultados['password'],
         $resultados['avatar'],
-        $resultados['activo']);
+        $resultados['active']);
 
     }else{
       return false;

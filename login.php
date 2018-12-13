@@ -44,6 +44,11 @@
         }else {
           $passUsuarioHash=null;
         }
+
+        // echo "<h1>Llegué hasta acá</h1>";
+        // var_dump($usuario);
+        // exit;
+
         if (($usuario!=null) && password_verify($password , $passUsuarioHash ) ) {
 
           //loguea al usuario

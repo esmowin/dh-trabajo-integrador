@@ -34,7 +34,7 @@ $usuario= $conn_BD->traerPorEmail($_SESSION["email"]);
 
         <div class="perfilmain">
           <div class="perfilusuario">
-            <img class="perfilimg" src="<?php echo $usuario->getAvatar(); ?>" alt="Perfil">
+            <img class="perfilimg" src="<?php echo substr($usuario->getAvatar(), 1); ?>" alt="Perfil">
           </div>
           <div class="perfilusuario">
             <h2 class ="perfilh2"><?php echo $usuario->getNickname(); ?></h2>
@@ -50,10 +50,18 @@ $usuario= $conn_BD->traerPorEmail($_SESSION["email"]);
               <span><?php echo $usuario->getCountry(); ?></span>  <!-- País de nacimiento: Neverland -->
             </div>
             <br>
+            <?php if ($usuario->getState()) { ?>
+              <div>
+                <label for=""><u>Provincia</u>: </label>
+                <span><?php echo $usuario->getState(); ?></span>  <!-- Provincia: Neverland -->
+              </div>
+              <br>
+            <?php } ?>
             <div>
               <label for=""><u>Email</u>: </label>
               <span><?php echo $usuario->getEmail(); ?></span><!-- Correo electronico: john@doe.com -->
             </div>
+            <br>
             <div>
               <label for=""><u>Tema</u>: </label>
               <button type="button" name="buttonclassic" id="buttonclassic">Clasico</button>
