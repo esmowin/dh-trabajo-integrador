@@ -34,7 +34,7 @@ $usuario= $conn_BD->traerPorEmail($_SESSION["email"]);
 
         <div class="perfilmain">
           <div class="perfilusuario">
-            <img class="perfilimg" src="<?php echo substr($usuario->getAvatar(), 1); ?>" alt="Perfil">
+            <img class="perfilimg" src="<?php echo "avatars/".$usuario->getAvatar(); ?>" alt="Perfil">
           </div>
           <div class="perfilusuario">
             <h2 class ="perfilh2"><?php echo $usuario->getNickname(); ?></h2>
