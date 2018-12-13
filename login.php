@@ -120,7 +120,10 @@
 
           </div>
 
-          <button class="registro-button" type="submit" name="">Ingresar</button>
+          <div class="registro-buttons">
+            <button class="registro-button confirm-button" type="submit">Ingresar</button>
+            <button class="registro-button cancel-button" type="">Cancelar</button>
+          </div>
 
         </form>
 
@@ -135,6 +138,7 @@
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/header.js"></script>
     <script src="js/themes.js"></script>
+    <script src="js/cancelButton.js"></script>
 
 
   </body>

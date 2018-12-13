@@ -201,7 +201,10 @@
 
           </div>
 
-          <button class="registro-button" type="submit" name="button">Enviar</button>
+          <div class="registro-buttons">
+            <button class="registro-button confirm-button" type="submit">Registrarme</button>
+            <button class="registro-button cancel-button" type="">Cancelar</button>
+          </div>
 
         </form>
 
@@ -218,6 +221,7 @@
     <script src="js/api.js"></script>
     <script src="js/themes.js"></script>
     <script src="js/validator.js"></script>
+    <script src="js/cancelButton.js"></script>
 
 
   </body>
