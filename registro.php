@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartPet - Registro</title>
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="css/styles.css" id="theme">
+    <link rel="stylesheet" href="css/paletaColores.css" id="theme">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/validator.js"></script>
     <link rel="icon" href="images/logo.png">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
@@ -83,7 +85,7 @@
 
         </div>
 
-        <form class="registro-formulario" action="registro.php" method="post" enctype="multipart/form-data">
+        <form class="registro-formulario" action="registro.php" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
 
           <div class="registro-container-campos">
 
