@@ -80,6 +80,7 @@ $usuario= $conn_BD->traerPorEmail($_SESSION["email"]);
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/header.js"></script>
     <script src="js/themes.js"></script>
+    <script src="js/themes-selector.js"></script>
 
   </body>
 </html>
