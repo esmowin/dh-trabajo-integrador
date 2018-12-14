@@ -18,7 +18,8 @@ header {
 
 
 .header-superior {
-  color: var(--colorSecundario);
+  /* color: var(--colorSecundario); */
+  color: white;
   width: 90%;
   max-width: 1200px;
   margin: auto;
@@ -88,7 +89,8 @@ align-items: center;
 
 
 .header-inferior {
-  color: var(--colorSecundario);
+  /* color: var(--colorSecundario); */
+  color: white;
   width: 90%;
   max-width: 1200px;
   margin: auto;
@@ -175,7 +177,8 @@ align-items: center;
 
 .barra-nav a {
   text-decoration: none;
-  color: var(--colorSecundario);
+  /* color: var(--colorSecundario); */
+  color: white;
   font-weight: bold;
 }
 

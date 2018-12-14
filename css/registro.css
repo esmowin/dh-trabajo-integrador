@@ -46,8 +46,9 @@
   background-color: white;
   font-size: 15px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
 }
 
 .registro-container-campos {
@@ -77,7 +78,8 @@
 }
 
 .olvide-y-recordar {
-  width: 250px;
+  width: 100%;
+  margin-bottom: 2px;
   text-align: center;
 }
 
@@ -118,7 +120,7 @@
 }
 
 .registro-button {
-  margin-top: 15px;
+  margin: 15px 0;
   border-radius: 5px;
   border: solid 1px black;
   padding: 8px 20px;
@@ -126,6 +128,7 @@
   color: white;
   font-size: 14px;
   font-weight: bold;
+  clear: both;
 }
 
 .registro-button:hover {
