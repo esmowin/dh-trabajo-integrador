@@ -113,7 +113,8 @@ footer {
 }
 
 .footer-inferior a {
-  color: var(--colorSecundario);;
+  /* color: var(--colorSecundario); */
+  color: white;
   text-decoration: underline;
 }
 
@@ -122,11 +123,13 @@ footer {
 }
 
 .footer-copyright {
-  border-right: 1px solid var(--colorSecundario);;
+  /* border-right: 1px solid var(--colorSecundario);; */
+  border-right: 1px solid white;
 }
 
 .footer-creditos {
-  border-left: 1px solid var(--colorSecundario);;
+  /* border-left: 1px solid var(--colorSecundario);; */
+  border-left: 1px solid white;
 }
 
 

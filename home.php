@@ -66,14 +66,14 @@
 
         <?php
         $productos = [
-        "camas_mascotas"=>["titulo"=>"Cama Para mascotas", "precio"=>" ","imagen"=>"imgProductos/camas_mascotas.jpg"],
-        "alimento_perros"=>["titulo"=>"Alimento Balanceado", "precio"=>" ","imagen"=>"imgProductos/alimento_perros.jpg"],
-        "comedero"=>["titulo"=>"Comedero para mascotas", "precio"=>" ","imagen"=>"imgProductos/comedero.jpg"],
-        "ropa_perros"=>["titulo"=>"Ropa para Mascotas", "precio"=>" ","imagen"=>"imgProductos/ropa_perros.jpg"],
-        "arnes"=>["titulo"=>"Arnes de Paseo", "precio"=>" ","imagen"=>"imgProductos/arnes.jpg"],
-        "cucha"=>["titulo"=>"Cucha para Perros", "precio"=>" ","imagen"=>"imgProductos/cucha.jpg"],
-        "rascador_gatos"=>["titulo"=>"Rascador para Gatos", "precio"=>" ","imagen"=>"imgProductos/rascador_gatos.jpg"],
-        "acuario"=>["titulo"=>"Acuario para Peces", "precio"=>" ","imagen"=>"imgProductos/acuario.jpeg"]
+        "camas_mascotas"=>["titulo"=>"Cama Para mascotas", "precio"=>" ","imagen"=>"camas_mascotas.jpg"],
+        "alimento_perros"=>["titulo"=>"Alimento Balanceado", "precio"=>" ","imagen"=>"alimento_perros.jpg"],
+        "comedero"=>["titulo"=>"Comedero para mascotas", "precio"=>" ","imagen"=>"comedero.jpg"],
+        "ropa_perros"=>["titulo"=>"Ropa para Mascotas", "precio"=>" ","imagen"=>"ropa_perros.jpg"],
+        "arnes"=>["titulo"=>"Arnes de Paseo", "precio"=>" ","imagen"=>"arnes.jpg"],
+        "cucha"=>["titulo"=>"Cucha para Perros", "precio"=>" ","imagen"=>"cucha.jpg"],
+        "rascador_gatos"=>["titulo"=>"Rascador para Gatos", "precio"=>" ","imagen"=>"rascador_gatos.jpg"],
+        "acuario"=>["titulo"=>"Acuario para Peces", "precio"=>" ","imagen"=>"acuario.jpeg"]
         ];
        ?>
 
@@ -84,7 +84,7 @@
           <div class="container-fluid container_productos">
             <?php foreach ($productos as $key => $value) {?>
               <div class="producto">
-              <img src="<?php echo $productos[$key]["imagen"];?>" alt="" width="400">
+              <img src="<?php echo "imgProductos/".$productos[$key]["imagen"]; ?>" alt="" width="400">
               <h3><?php echo $productos[$key]["titulo"]; ?></h3>
               <h4><?php echo $productos[$key]["precio"]; ?></h4>
               </div>
