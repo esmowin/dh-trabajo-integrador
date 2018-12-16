@@ -8,8 +8,8 @@
 // // avatar
 //
 // window.onload = function () {
-// 	var formulario = document.querySelector('.contact-form');
-//   var campoFullName = formulario.fullName;
+// 	var formulario = document.querySelector('.registro-formulario');
+//   var campoFullName = formulario.fullname;
 //   var campoNickname = formulario.nickname;
 //   var campoCountry = formulario.country;
 //   var campoState = formulario.state;
@@ -29,7 +29,7 @@
 //
 // 	function validateEmpty () {
 // 		var error = this.parentElement.querySelector('.invalid-feedback');
-// 		var nombreCampo = this.parentElement.querySelector('label').innerText;
+// 		var nombreCampo = this.parentNode.parentNode.querySelector('label').innerText;
 // 		if (this.value.trim() === '') {
 // 			this.classList.add('is-invalid');
 // 			error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
@@ -41,7 +41,7 @@
 //
 // 	function validateEmptyAndEmail () {
 // 		var error = this.parentElement.querySelector('.invalid-feedback');
-// 		var nombreCampo = this.parentElement.querySelector('label').innerText;
+// 		var nombreCampo = this.parentNode.parentNode.querySelector('label').innerText;
 // 		if (this.value.trim() === '') {
 // 			this.classList.add('is-invalid');
 // 			error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
@@ -55,10 +55,10 @@
 //
 // 	function validateEmptyAndNumber () {
 // 		var error = this.parentElement.querySelector('.invalid-feedback');
-// 		var nombreCampo = this.parentElement.querySelector('label').innerText;
+// 		// var nombreCampo = this.parentElement.querySelector('label').innerText;
 // 		if (this.value.trim() === '') {
 // 			this.classList.add('is-invalid');
-// 			error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
+// 			// error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
 // 		} else if (!regexNumbers.test(this.value.trim())) {
 // 			error.innerText = 'El teléfono debe contener solo números';
 // 		} else {
@@ -68,13 +68,13 @@
 // 	}
 //
 // 	campoFullName.addEventListener('blur', validateEmpty);
-// 	campoFullName.addEventListener('blur', validateEmpty);
+// 	campoNickname.addEventListener('blur', validateEmpty);
 //   campoCountry.addEventListener('blur', validateEmpty);
 // 	campoEmail.addEventListener('blur', validateEmptyAndEmail);
 //
-// 	campoPassword.addEventListener('blur', function () {
+// 	campoPassword1.addEventListener('blur', function () {
 // 		var error = this.parentElement.querySelector('.invalid-feedback');
-// 		var nombreCampo = this.parentElement.querySelector('label').innerText;
+// 		var nombreCampo = this.parentNode.parentNode.querySelector('label').innerText;
 // 		if (this.value.trim() === '') {
 // 			this.classList.add('is-invalid');
 // 			error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
@@ -110,7 +110,7 @@
 // 		) {
 // 			campos.forEach(function (campo) {
 // 				var error = campo.parentElement.querySelector('.invalid-feedback');
-// 				var nombreCampo = campo.parentElement.querySelector('label').innerText;
+// 				var nombreCampo = campo.parentNode.parentNode.querySelector('label').innerText;
 // 				if (campo.value.trim() === '') {
 // 					campo.classList.add('is-invalid');
 // 					error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
