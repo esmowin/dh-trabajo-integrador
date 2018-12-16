@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartPet - Registro</title>
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="css/paletaColores.css" id="theme">
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/validator.js"></script>
+
     <link rel="icon" href="images/logo.png">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
@@ -108,7 +108,7 @@
               <div class="registro-campo">
 
                 <input <?php if (isset($errores['fullname'])) {echo 'style="border: solid 2px red"';} ?> type="text" name="fullname" id="fullname" value="<?php echo $fullname ?>">
-                <div class="invalid-feedback">asdfasdf</div>
+                <div class="registro-error-js"></div>
                 <?php
                   if (isset($errores['fullname'])) {
                     echo '<br><span class="registro-error">'.$errores['fullname'].'</span>';
@@ -121,7 +121,7 @@
               <label for="nickname" class="registro-nombre">Nombre de usuario</label>
               <div class="registro-campo">
                 <input <?php if (isset($errores['nickname'])) {echo 'style="border: solid 2px red"';} ?> type="text" name="nickname" id="nickname" value="<?php echo $nickname ?>">
-                <div class="invalid-feedback"></div>
+                <div class="registro-error-js"></div>
                 <?php
                   if (isset($errores['nickname'])) {
                     echo '<br><span class="registro-error">'.$errores['nickname'].'</span>';
@@ -136,7 +136,7 @@
                 <select class="registro-dropdown" <?php if (isset($errores['country'])) {echo 'style="border: solid 2px red"';} ?> name="country" id="country">
                   <option value="">--------- Elige un país ---------</option>
                 </select>
-              <div class="invalid-feedback"></div>
+              <div class="registro-error-js"></div>
                 <?php
                   if (isset($errores['country'])) {
                     echo '<br><span class="registro-error">'.$errores['country'].'</span>';
@@ -146,6 +146,7 @@
             </div>
 
             <div class="registro-nombre-y-campo" id="state">
+              <div class="registro-error-js"></div>
               <!-- Acá va el campo "Provincia" en el caso de que se elija "Argentina" como país de nacimiento -->
             </div>
 
@@ -153,7 +154,7 @@
               <label for="email" class="registro-nombre">Correo electrónico</label>
               <div class="registro-campo">
                 <input <?php if (isset($errores['email'])) {echo 'style="border: solid 2px red"';} ?> type="text" name="email" id="email" value="<?php echo $email ?>">
-                <div class="invalid-feedback"></div>
+                <div class="registro-error-js"></div>
                 <?php
                   if (isset($errores['email'])) {
                     echo '<br><span class="registro-error">'.$errores['email'].'</span>';
@@ -166,7 +167,7 @@
               <label for="password1" class="registro-nombre">Contraseña</label>
               <div class="registro-campo">
                 <input <?php if (isset($errores['password1'])|| (isset($errores['password2']))) {echo 'style="border: solid 2px red"';} ?> type="password" name="password1" id="password1" value="">
-                <div class="invalid-feedback"></div>
+                <div class="registro-error-js"></div>
                 <?php
                   if (isset($errores['password1'])) {
                     echo '<br><span class="registro-error">'.$errores['password1'].'</span>';
@@ -179,7 +180,7 @@
               <label for="password2" class="registro-nombre">Repetir contraseña</label>
               <div class="registro-campo">
                 <input <?php if (isset($errores['password2'])) {echo 'style="border: solid 2px red"';} ?> type="password" name="password2" id="password2" value="">
-                <div class="invalid-feedback"></div>
+                <div class="registro-error-js"></div>
                 <?php
                   if (isset($errores['password2'])) {
                     echo '<br><span class="registro-error">'.$errores['password2'].'</span>';
@@ -192,7 +193,7 @@
               <label for="avatar" class="registro-nombre">Imagen de perfil</label>
               <div class="registro-campo">
                 <input <?php if (isset($errores['imagen'])) {echo 'style="border: solid 2px red"';} ?> class="seleccionar-archivo" type="file" name="avatar" id="avatar" accept=".png, .jpg, .jpeg">
-                <div class="invalid-feedback"></div>
+                <div class="registro-error-js"></div>
                 <br>
                 <div class="registro-leyenda-archivo">
                   <span class="registro-leyenda-archivo-formatos">Formatos: png, jpg y jpeg</span>
@@ -222,8 +223,8 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/header.js"></script>
-    <script src="js/api.js"></script>
     <script src="js/themes.js"></script>
+    <script src="js/api.js"></script>
     <script src="js/validator.js"></script>
 
   </body>

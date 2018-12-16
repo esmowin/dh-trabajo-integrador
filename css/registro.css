@@ -110,6 +110,11 @@
   color: var(--colorPrimario);
   margin: 0;
 }
+.registro-error-js {
+  font-size: 10px;
+  color: orange;
+  margin: 0;
+}
 
 .registro-buttons {
   width: 70%;
