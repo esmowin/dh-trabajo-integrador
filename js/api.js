@@ -1,7 +1,7 @@
 window.onload = function() {
 
   var selectPaises = document.querySelector('.registro-dropdown');
-  var campoProvincia = document.getElementById('campo-provincia');
+  var campoProvincia = document.getElementById('state');
 
   var cargarPaises = function(paises) {
     paises.forEach(function(pais) {

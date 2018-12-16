@@ -99,7 +99,7 @@
 
         </div>
 
-        <form class="registro-formulario" action="registro.php" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
+        <form class="registro-formulario" action="registro.php" method="post" enctype="multipart/form-data">
 
           <div class="registro-container-campos">
 
@@ -142,7 +142,7 @@
               </div>
             </div>
 
-            <div class="registro-nombre-y-campo" id="campo-provincia">
+            <div class="registro-nombre-y-campo" id="state">
               <!-- Acá va el campo "Provincia" en el caso de que se elija "Argentina" como país de nacimiento -->
             </div>
 
