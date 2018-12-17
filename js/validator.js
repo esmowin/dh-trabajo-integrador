@@ -54,7 +54,7 @@ window.onload = function () {
 
     if (this.options[this.selectedIndex].value == 'Argentina') {
 
-      campoProvincia.innerHTML = '<label for="state" class="registro-nombre">Provincia:</label><div class="registro-campo"><select class="registro-dropdown" name="state" id="dropdown-provincias"><option value="">----- Elige una provincia -----</option></select></div>';
+      campoProvincia.innerHTML = '<label for="state" class="registro-nombre">Provincia:</label><div class="registro-campo"><select class="registro-dropdown" name="state" id="dropdown-provincias"><option value="">----- Elige una provincia -----</option></select><div class="registro-error-js"></div></div>';
 
       fetch('https://dev.digitalhouse.com/api/getProvincias')
       .then(function(response) {
@@ -66,6 +66,9 @@ window.onload = function () {
           provincias.push(provincia.state);
         });
         cargarProvincias(provincias);
+        console.log(formulario.state);
+        var campoState = formulario.state
+        campoState.addEventListener('blur', validateEmpty);
       })
       .catch(function(error) {
         console.log("Ocurrió un error: " + error);

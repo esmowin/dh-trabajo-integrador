@@ -146,7 +146,7 @@
             </div>
 
             <div class="registro-nombre-y-campo" id="state">
-              <div class="registro-error-js"></div>
+              
               <!-- Acá va el campo "Provincia" en el caso de que se elija "Argentina" como país de nacimiento -->
             </div>
 
@@ -224,7 +224,7 @@
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/header.js"></script>
     <script src="js/themes.js"></script>
-    <script src="js/api.js"></script>
+    <!-- <script src="js/api.js"></script> -->
     <script src="js/validator.js"></script>
 
   </body>
