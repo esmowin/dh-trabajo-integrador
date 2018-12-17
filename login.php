@@ -114,13 +114,13 @@
               </div>
             </div>
 
-            <label class="olvide-y-recordar"><input type="checkbox" name="recordarusuario" value="recordarme"> Recordar mi cuenta</label>
+            <label class="registro-recordar"><input type="checkbox" name="recordarusuario" value="recordarme"> Recordar mi cuenta</label>
 
           </div>
 
           <button class="registro-button" type="submit">Ingresar</button>
 
-          <label class="olvide-y-recordar">Olvidaste tu contraseña? Recupérala <a href="olvideContrasenia.php">aquí</a></label>
+          <label class="registro-olvide">Olvidaste tu contraseña? Recupérala <a href="olvideContrasenia.php">aquí</a></label>
 
         </form>
 
