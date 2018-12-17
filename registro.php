@@ -104,7 +104,7 @@
           <div class="registro-container-campos">
 
             <div class="registro-nombre-y-campo">
-              <label for="fullname" class="registro-nombre">Nombre completo</label>
+              <label for="fullname" class="registro-nombre">Nombre completo:</label>
               <div class="registro-campo">
 
                 <input <?php if (isset($errores['fullname'])) {echo 'style="border: solid 2px red"';} ?> type="text" name="fullname" id="fullname" value="<?php echo $fullname ?>">
@@ -118,7 +118,7 @@
             </div>
 
             <div class="registro-nombre-y-campo">
-              <label for="nickname" class="registro-nombre">Nombre de usuario</label>
+              <label for="nickname" class="registro-nombre">Nombre de usuario:</label>
               <div class="registro-campo">
                 <input <?php if (isset($errores['nickname'])) {echo 'style="border: solid 2px red"';} ?> type="text" name="nickname" id="nickname" value="<?php echo $nickname ?>">
                 <div class="registro-error-js"></div>
@@ -131,7 +131,7 @@
             </div>
 
             <div class="registro-nombre-y-campo">
-              <label for="country" class="registro-nombre">País de nacimiento</label>
+              <label for="country" class="registro-nombre">País de nacimiento:</label>
               <div class="registro-campo">
                 <select class="registro-dropdown" <?php if (isset($errores['country'])) {echo 'style="border: solid 2px red"';} ?> name="country" id="country">
                   <option value="">--------- Elige un país ---------</option>
@@ -151,7 +151,7 @@
             </div>
 
             <div class="registro-nombre-y-campo">
-              <label for="email" class="registro-nombre">Correo electrónico</label>
+              <label for="email" class="registro-nombre">Correo electrónico:</label>
               <div class="registro-campo">
                 <input <?php if (isset($errores['email'])) {echo 'style="border: solid 2px red"';} ?> type="text" name="email" id="email" value="<?php echo $email ?>">
                 <div class="registro-error-js"></div>
@@ -164,7 +164,7 @@
             </div>
 
             <div class="registro-nombre-y-campo">
-              <label for="password1" class="registro-nombre">Contraseña</label>
+              <label for="password1" class="registro-nombre">Contraseña:</label>
               <div class="registro-campo">
                 <input <?php if (isset($errores['password1'])|| (isset($errores['password2']))) {echo 'style="border: solid 2px red"';} ?> type="password" name="password1" id="password1" value="">
                 <div class="registro-error-js"></div>
@@ -177,7 +177,7 @@
             </div>
 
             <div class="registro-nombre-y-campo">
-              <label for="password2" class="registro-nombre">Repetir contraseña</label>
+              <label for="password2" class="registro-nombre">Repetir contraseña:</label>
               <div class="registro-campo">
                 <input <?php if (isset($errores['password2'])) {echo 'style="border: solid 2px red"';} ?> type="password" name="password2" id="password2" value="">
                 <div class="registro-error-js"></div>
@@ -190,11 +190,10 @@
             </div>
 
             <div class="registro-nombre-y-campo">
-              <label for="avatar" class="registro-nombre">Imagen de perfil</label>
+              <label for="avatar" class="registro-nombre">Imagen de perfil:</label>
               <div class="registro-campo">
                 <input <?php if (isset($errores['imagen'])) {echo 'style="border: solid 2px red"';} ?> class="seleccionar-archivo" type="file" name="avatar" id="avatar" accept=".png, .jpg, .jpeg">
                 <div class="registro-error-js"></div>
-                <br>
                 <div class="registro-leyenda-archivo">
                   <span class="registro-leyenda-archivo-formatos">Formatos: png, jpg y jpeg</span>
                   <span class="registro-leyenda-archivo-tamaño">Tamaño máximo: 2MB</span>
