@@ -5,19 +5,19 @@ var time = now.getTime();
 time += 3600 * 1000;
 now.setTime(time);
 
-  // chequea si la cookie theme esta seteada
-  if (document.cookie.length != 0)
+// chequea si la cookie theme esta seteada
+if (document.cookie.length != 0)
+{
+  var cookiesArray = document.cookie.split("; ");
+  for (var i = 0; i < cookiesArray.length; i++)
   {
-    var cookiesArray = document.cookie.split("; ");
-    for (var i = 0; i < cookiesArray.length; i++)
+    var nameValueArray = cookiesArray[i].split("=");
+    if (nameValueArray[0] == "theme")
     {
-      var nameValueArray = cookiesArray[i].split("=");
-      if (nameValueArray[0] == "theme")
+      if (nameValueArray[1] == "navidad")
       {
-        if (nameValueArray[1] == "navidad")
-        {
-          document.getElementById('theme').href = 'css/paletaColoresNavidad.css';
-        }
+        document.getElementById('theme').href = 'css/paletaColoresNavidad.css';
       }
     }
   }
+}
