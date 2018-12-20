@@ -12,7 +12,7 @@ window.onload = function () {
 //   // Api para la carga de paises
 //
   var selectPaises = document.querySelector('.registro-dropdown');
-  var campoProvincia = document.getElementById('state');
+  var campoProvincia = document.getElementById('lugarstate');
 
   var cargarPaises = function(paises) {
     paises.forEach(function(pais) {
@@ -54,7 +54,7 @@ window.onload = function () {
 
     if (this.options[this.selectedIndex].value == 'Argentina') {
 
-      campoProvincia.innerHTML = '<label for="state" class="registro-nombre">Provincia:</label><div class="registro-campo"><select class="registro-dropdown" name="state" id="dropdown-provincias"><option value="">----- Elige una provincia -----</option></select><div class="registro-error-js"></div></div>';
+      campoProvincia.innerHTML = '<label for="state" class="registro-nombre">Provincia:</label><div class="registro-campo"><select class="registro-dropdown" name="state1" id="dropdown-provincias"><option value="">----- Elige una provincia -----</option></select><div class="registro-error-js"></div></div>';
 
       fetch('https://dev.digitalhouse.com/api/getProvincias')
       .then(function(response) {
@@ -66,8 +66,6 @@ window.onload = function () {
           provincias.push(provincia.state);
         });
         cargarProvincias(provincias);
-        console.log(formulario.state);
-        var formulario = document.querySelector('.registro-formulario');
         var campoState = document.getElementById('dropdown-provincias');
       })
       .catch(function(error) {
@@ -134,10 +132,15 @@ window.onload = function () {
 	campoNickname.addEventListener('blur', validateEmpty);
   campoCountry.addEventListener('blur', validateEmpty);
 	campoEmail.addEventListener('blur', validateEmptyAndEmail);
-  if (campoCountry.options[campoCountry.selectedIndex].value == 'Argentina') {
-    campoState.addEventListener('blur', validateEmpty);
-  }
-  campoAvatar.addEventListener('blur', validateEmptyAndEmail);
+  // if (campoCountry.options[campoCountry.selectedIndex].value == 'Argentina') {
+  //   campoState.addEventListener('blur', validateEmpty);
+  // }
+  // if (campoState) {
+  // campoState.addEventListener('blur', validateEmpty);
+  // }
+  // campoState.addEventListener('blur', validateEmpty);
+
+  campoAvatar.addEventListener('blur', validateEmpty);
 
 
 	campoPassword1.addEventListener('blur', function () {
@@ -167,11 +170,12 @@ window.onload = function () {
 
 	formulario.addEventListener('submit', function (e) {
 
+
 		if (
 			campoFullName.value.trim() === '' ||
 			campoNickname.value.trim() === '' ||
 			campoCountry.value.trim() === '' ||
-			campoState.value.trim() === '' ||
+			// campoState.value.trim() === '' ||
 			campoEmail.value.trim() === '' ||
 			campoPassword1.value.trim() === '' ||
       campoPassword2.value.trim() === '' ||
@@ -180,19 +184,18 @@ window.onload = function () {
       e.preventDefault();
 			campos.forEach(function (campo) {
 				var error = campo.parentElement.querySelector('.registro-error-js');
-				var nombreCampo = campo.parentNode.parentNode.querySelector('label').innerText;
 				if (campo.value.trim() === '') {
 					campo.classList.add('is-invalid');
-					error.innerText = 'El campo es AAAA obligatorio';
+					error.innerText = 'El campo es obligatorio';
 				}
 			});
 		} else if (campoPassword2.value !== campoPassword1.value) {
       e.preventDefault();
 			campoPassword2.classList.add('is-invalid');
 			campoPassword2.parentElement.querySelector('.registro-error-js').innerText = 'Las contraseñas no coinciden';
-    } else if (!regexEmail.test(this.value.trim())) {
+    } else if (!regexEmail.test(campoEmail.value.trim())) {
       e.preventDefault();
-			error.innerText = 'Escribí un formato de email valido';
+			campoEmail.innerText = 'Escribí un formato de email valido';
     } else {
 			campos.forEach(function (campo) {
 				finalData[campo.name] = campo.value;
