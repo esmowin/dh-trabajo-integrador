@@ -66,13 +66,7 @@ window.onload = function () {
           provincias.push(provincia.state);
         });
         cargarProvincias(provincias);
-<<<<<<< HEAD
-        // console.log(formulario.state);
-        var campoState = formulario.state;
-        campoState.addEventListener('blur', validateEmpty);
-=======
         var campoState = document.getElementById('dropdown-provincias');
->>>>>>> 5c03c57207c1b8f9e405addcb0906c522497b150
       })
       .catch(function(error) {
         console.log("Ocurrió un error: " + error);
