@@ -91,6 +91,7 @@ window.onload = function () {
   var campoAvatar = formulario.avatar
   var finalData = {};
 
+  console.log(campoState);
 
 	var campos = formulario.elements;
 
