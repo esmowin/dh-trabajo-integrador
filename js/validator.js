@@ -66,8 +66,8 @@ window.onload = function () {
           provincias.push(provincia.state);
         });
         cargarProvincias(provincias);
-        console.log(formulario.state);
-        var campoState = formulario.state
+        // console.log(formulario.state);
+        var campoState = formulario.state;
         campoState.addEventListener('blur', validateEmpty);
       })
       .catch(function(error) {
@@ -92,6 +92,7 @@ window.onload = function () {
   var campoPassword2 = formulario.password2;
   var finalData = {};
 
+  console.log(campoState);
 
 	var campos = formulario.elements;
 
