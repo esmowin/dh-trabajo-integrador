@@ -1,16 +1,16 @@
-// fullName
-// nickname
-// country
-// state
-// email
-// password1
-// password2
-// avatar
-
+// // fullName
+// // nickname
+// // country
+// // state
+// // email
+// // password1
+// // password2
+// // avatar
+//
 window.onload = function () {
-
-  // Api para la carga de paises
-
+//
+//   // Api para la carga de paises
+//
   var selectPaises = document.querySelector('.registro-dropdown');
   var campoProvincia = document.getElementById('state');
 
@@ -67,8 +67,8 @@ window.onload = function () {
         });
         cargarProvincias(provincias);
         console.log(formulario.state);
-        var campoState = formulario.state
-        campoState.addEventListener('blur', validateEmpty);
+        var formulario = document.querySelector('.registro-formulario');
+        var campoState = document.getElementById('dropdown-provincias');
       })
       .catch(function(error) {
         console.log("Ocurrió un error: " + error);
@@ -86,10 +86,11 @@ window.onload = function () {
   var campoFullName = formulario.fullname;
   var campoNickname = formulario.nickname;
   var campoCountry = formulario.country;
-  var campoState = formulario.state;
+  var campoState = document.getElementById('dropdown-provincias');
   var campoEmail = formulario.email;
   var campoPassword1 = formulario.password1;
   var campoPassword2 = formulario.password2;
+  var campoAvatar = formulario.avatar
   var finalData = {};
 
 
@@ -107,7 +108,7 @@ window.onload = function () {
 		var nombreCampo = this.parentNode.parentNode.querySelector('label').innerText;
 		if (this.value.trim() === '') {
 			this.classList.add('is-invalid');
-			error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
+			error.innerText = 'El campo es obligatorio';
 		} else {
 			error.innerText = '';
 			this.classList.remove('is-invalid');
@@ -119,7 +120,7 @@ window.onload = function () {
 		var nombreCampo = this.parentNode.parentNode.querySelector('label').innerText;
 		if (this.value.trim() === '') {
 			this.classList.add('is-invalid');
-			error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
+			error.innerText = 'El campo es obligatorio';
 		} else if (!regexEmail.test(this.value.trim())) {
 			error.innerText = 'Escribí un formato de email valido';
 		} else {
@@ -128,19 +129,6 @@ window.onload = function () {
 		}
 	}
 
-	function validateEmptyAndNumber () {
-		var error = this.parentElement.querySelector('.registro-error-js');
-		// var nombreCampo = this.parentElement.querySelector('label').innerText;
-		if (this.value.trim() === '') {
-			this.classList.add('is-invalid');
-			// error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
-		} else if (!regexNumbers.test(this.value.trim())) {
-			error.innerText = 'El teléfono debe contener solo números';
-		} else {
-			error.innerText = '';
-			this.classList.remove('is-invalid');
-		}
-	}
 
 	campoFullName.addEventListener('blur', validateEmpty);
 	campoNickname.addEventListener('blur', validateEmpty);
@@ -149,13 +137,15 @@ window.onload = function () {
   if (campoCountry.options[campoCountry.selectedIndex].value == 'Argentina') {
     campoState.addEventListener('blur', validateEmpty);
   }
+  campoAvatar.addEventListener('blur', validateEmptyAndEmail);
+
 
 	campoPassword1.addEventListener('blur', function () {
 		var error = this.parentElement.querySelector('.registro-error-js');
 		var nombreCampo = this.parentNode.parentNode.querySelector('label').innerText;
 		if (this.value.trim() === '') {
 			this.classList.add('is-invalid');
-			error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
+			error.innerText = 'El campo es obligatorio';
 		} else if (this.value.trim().length < 4) {
 			error.innerText = 'La contraseña debe tener más de 4 caracteres';
 		} else {
@@ -176,7 +166,7 @@ window.onload = function () {
 	});
 
 	formulario.addEventListener('submit', function (e) {
-		e.preventDefault();
+
 		if (
 			campoFullName.value.trim() === '' ||
 			campoNickname.value.trim() === '' ||
@@ -184,20 +174,26 @@ window.onload = function () {
 			campoState.value.trim() === '' ||
 			campoEmail.value.trim() === '' ||
 			campoPassword1.value.trim() === '' ||
-			campoPassword2.value.trim() === ''
+      campoPassword2.value.trim() === '' ||
+			campoAvatar.value.trim() === ''
 		) {
+      e.preventDefault();
 			campos.forEach(function (campo) {
 				var error = campo.parentElement.querySelector('.registro-error-js');
 				var nombreCampo = campo.parentNode.parentNode.querySelector('label').innerText;
 				if (campo.value.trim() === '') {
 					campo.classList.add('is-invalid');
-					error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
+					error.innerText = 'El campo es AAAA obligatorio';
 				}
 			});
 		} else if (campoPassword2.value !== campoPassword1.value) {
+      e.preventDefault();
 			campoPassword2.classList.add('is-invalid');
 			campoPassword2.parentElement.querySelector('.registro-error-js').innerText = 'Las contraseñas no coinciden';
-		} else {
+    } else if (!regexEmail.test(this.value.trim())) {
+      e.preventDefault();
+			error.innerText = 'Escribí un formato de email valido';
+    } else {
 			campos.forEach(function (campo) {
 				finalData[campo.name] = campo.value;
 				var error = campo.parentElement.querySelector('.registro-error-js');
@@ -205,21 +201,6 @@ window.onload = function () {
 				campo.value = '';
 				error.innerText = '';
 			});
-			formulario.style.display = 'none';
-
-			var ul = document.createElement('ul');
-
-			for (var key in finalData) {
-				if (key !== 'password' && key !== 'Password2') {
-					var li = document.createElement('li');
-					li.innerText = key + ': ' + finalData[key];
-					ul.append(li);
-				}
-			}
-
-			document.querySelector('.col-md-8').append(ul);
 		}
-	});
-
-
-}
+	})
+};
