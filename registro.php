@@ -145,8 +145,8 @@
               </div>
             </div>
 
-            <div class="registro-nombre-y-campo" id="state">
-              
+            <div class="registro-nombre-y-campo" id="lugarstate">
+
               <!-- Acá va el campo "Provincia" en el caso de que se elija "Argentina" como país de nacimiento -->
             </div>
 
